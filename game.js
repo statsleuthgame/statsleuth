@@ -156,6 +156,10 @@ function initGame(sport, config) {
       updatePips();
       addWrongGuessTag(matched);
       revealNextClue();
+      card.classList.remove('wrong-flash');
+      card.offsetHeight; // force reflow
+      card.classList.add('wrong-flash');
+      card.addEventListener('animationend', () => card.classList.remove('wrong-flash'), { once: true });
 
       if (state.wrongGuesses.length >= MAX_GUESSES) {
         state.result = 'lose';

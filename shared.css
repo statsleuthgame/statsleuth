@@ -120,8 +120,15 @@ main {
 
 .page-header h1 span { color: var(--accent); }
 
-.eligibility-note {
+.game-subtitle {
   margin-top: 6px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.eligibility-note {
+  margin-top: 4px;
   font-size: 11px;
   color: var(--text-light);
   font-family: 'DM Mono', monospace;
@@ -164,6 +171,16 @@ main {
   0%   { box-shadow: 0 0 0 0px var(--green), 0 8px 32px rgba(76,175,125,0); }
   50%  { box-shadow: 0 0 0 8px var(--green), 0 8px 40px rgba(76,175,125,0.4); }
   100% { box-shadow: 0 0 0 3px var(--green), 0 8px 40px rgba(76,175,125,0.25); }
+}
+
+@keyframes wrongFlash {
+  0%   { box-shadow: var(--shadow-lg); }
+  40%  { box-shadow: 0 0 0 8px var(--red), 0 8px 40px rgba(224,82,82,0.3); }
+  100% { box-shadow: var(--shadow-lg); }
+}
+
+.sports-card.wrong-flash {
+  animation: wrongFlash 0.6s ease;
 }
 
 /* ── CARD HEADER (sport texture) ── */
