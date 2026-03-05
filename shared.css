@@ -311,17 +311,20 @@ main {
 
 .sports-card { counter-reset: clue-counter; }
 
-.clue-content::before {
+.clue-row::before {
   counter-increment: clue-counter;
   content: "CLUE #" counter(clue-counter);
-  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
   text-align: center;
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: var(--text-muted);
   font-family: 'DM Mono', monospace;
-  margin-bottom: 3px;
+  z-index: 1;
 }
 
 .clue-label {
