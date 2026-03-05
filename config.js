@@ -904,7 +904,7 @@ const STATSLEUTH_CONFIG = {
   },
 
   nfl: {
-    answer: "Ezekial Elliott",
+    answer: "Ezekiel Elliott",
     clues: [
       { label: "Year", value: "2022" },
       { label: "Draft Year", value: "2016" },
