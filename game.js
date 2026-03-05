@@ -1,0 +1,336 @@
+// ============================================================
+// STATSLEUTH — GAME ENGINE
+// ============================================================
+
+function initGame(sport, config) {
+  const MAX_GUESSES = 5;
+  const STORAGE_KEY = `statsleuth_${sport}_${getTodayKey()}`;
+
+  // ── Load saved state ──
+  let state = loadState();
+
+  // ── DOM refs ──
+  const card        = document.getElementById('sports-card');
+  const cardHeader  = document.getElementById('card-header');
+  const playerReveal= document.getElementById('player-name-reveal');
+  const clueRows    = document.querySelectorAll('.clue-row');
+  const searchInput = document.getElementById('search-input');
+  const dropdown    = document.getElementById('autocomplete-dropdown');
+  const guessBtn    = document.getElementById('guess-btn');
+  const pips        = document.querySelectorAll('.guess-pip');
+  const wrongList   = document.getElementById('wrong-guesses-list');
+  const wrongSection= document.getElementById('wrong-guesses');
+  const endState    = document.getElementById('end-state');
+  const endScore    = document.getElementById('end-score');
+  const endSub      = document.getElementById('end-sub');
+  const emojiGrid   = document.getElementById('emoji-grid');
+  const shareBtn    = document.getElementById('share-btn');
+  const lockedBanner= document.getElementById('locked-banner');
+  const guessArea   = document.getElementById('guess-area');
+
+  // ── Restore state on load ──
+  restoreUI();
+
+  // ── Search / autocomplete ──
+  searchInput.addEventListener('input', onSearchInput);
+  searchInput.addEventListener('keydown', onSearchKeydown);
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) closeDropdown();
+  });
+
+  guessBtn.addEventListener('click', submitGuess);
+  shareBtn.addEventListener('click', shareResult);
+
+  // ────────────────────────────────────────────
+  function onSearchInput() {
+    const q = searchInput.value.trim();
+    if (q.length < 3) { closeDropdown(); return; }
+    const matches = config.players.filter(p =>
+      p.toLowerCase().includes(q.toLowerCase())
+    ).slice(0, 8);
+    renderDropdown(matches, q);
+  }
+
+  function renderDropdown(matches, q) {
+    if (!matches.length) { closeDropdown(); return; }
+    dropdown.innerHTML = '';
+    matches.forEach((name, i) => {
+      const item = document.createElement('div');
+      item.className = 'autocomplete-item';
+      item.dataset.index = i;
+      item.innerHTML = highlight(name, q);
+      item.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        selectPlayer(name);
+      });
+      dropdown.appendChild(item);
+    });
+    dropdown.classList.add('open');
+    dropdown._matches = matches;
+    dropdown._activeIndex = -1;
+  }
+
+  function highlight(name, q) {
+    const idx = name.toLowerCase().indexOf(q.toLowerCase());
+    if (idx === -1) return name;
+    return name.slice(0, idx) +
+      `<mark>${name.slice(idx, idx + q.length)}</mark>` +
+      name.slice(idx + q.length);
+  }
+
+  function onSearchKeydown(e) {
+    if (!dropdown.classList.contains('open')) {
+      if (e.key === 'Enter') submitGuess();
+      return;
+    }
+    const items = dropdown.querySelectorAll('.autocomplete-item');
+    let idx = dropdown._activeIndex ?? -1;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      idx = Math.min(idx + 1, items.length - 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      idx = Math.max(idx - 1, 0);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (idx >= 0 && dropdown._matches[idx]) {
+        selectPlayer(dropdown._matches[idx]);
+      } else {
+        submitGuess();
+      }
+      return;
+    } else if (e.key === 'Escape') {
+      closeDropdown(); return;
+    }
+    items.forEach((el, i) => el.classList.toggle('active', i === idx));
+    dropdown._activeIndex = idx;
+  }
+
+  function selectPlayer(name) {
+    searchInput.value = name;
+    closeDropdown();
+    searchInput.focus();
+  }
+
+  function closeDropdown() {
+    dropdown.classList.remove('open');
+    dropdown.innerHTML = '';
+  }
+
+  // ────────────────────────────────────────────
+  function submitGuess() {
+    if (state.locked) return;
+    const guess = searchInput.value.trim();
+    if (!guess) return;
+
+    // Check if in player list (case-insensitive)
+    const matched = config.players.find(p => p.toLowerCase() === guess.toLowerCase());
+    if (!matched) {
+      shake(searchInput);
+      searchInput.placeholder = 'Player not found — check spelling';
+      setTimeout(() => searchInput.placeholder = 'Search for a player...', 2000);
+      return;
+    }
+
+    // Already guessed?
+    if (state.wrongGuesses.includes(matched)) {
+      shake(searchInput);
+      return;
+    }
+
+    searchInput.value = '';
+    closeDropdown();
+
+    const correct = matched.toLowerCase() === config.answer.toLowerCase();
+
+    if (correct) {
+      state.result = 'win';
+      state.guessesUsed = state.wrongGuesses.length + 1;
+      state.locked = true;
+      revealAllClues();
+      revealCardHeader(true);
+      card.classList.add('win');
+      setTimeout(() => showEndState('win'), 600);
+    } else {
+      state.wrongGuesses.push(matched);
+      updatePips();
+      addWrongGuessTag(matched);
+      revealNextClue();
+
+      if (state.wrongGuesses.length >= MAX_GUESSES) {
+        state.result = 'lose';
+        state.guessesUsed = MAX_GUESSES;
+        state.locked = true;
+        revealAllClues();
+        revealCardHeader(false);
+        card.classList.add('lose');
+        setTimeout(() => showEndState('lose'), 700);
+      }
+    }
+
+    saveState();
+
+    if (state.locked) {
+      searchInput.disabled = true;
+      guessBtn.disabled = true;
+      lockedBanner.classList.add('show');
+    }
+  }
+
+  // ────────────────────────────────────────────
+  function revealNextClue() {
+    const idx = state.wrongGuesses.length - 1;
+    if (idx < clueRows.length) {
+      setTimeout(() => {
+        clueRows[idx].classList.add('revealed');
+      }, 200);
+    }
+  }
+
+  function revealAllClues() {
+    clueRows.forEach((row, i) => {
+      setTimeout(() => row.classList.add('revealed'), i * 80);
+    });
+  }
+
+  function revealCardHeader(win) {
+    setTimeout(() => {
+      cardHeader.classList.add('revealed');
+      playerReveal.textContent = config.answer;
+    }, win ? 300 : 500);
+  }
+
+  function updatePips() {
+    state.wrongGuesses.forEach((_, i) => {
+      if (pips[i]) pips[i].classList.add('wrong');
+    });
+  }
+
+  function addWrongGuessTag(name) {
+    wrongSection.style.display = 'block';
+    const tag = document.createElement('span');
+    tag.className = 'wrong-guess-tag';
+    tag.textContent = name;
+    wrongList.appendChild(tag);
+  }
+
+  function showEndState(result) {
+    endState.classList.add('show');
+    if (result === 'win') {
+      endScore.textContent = `Got it in ${state.guessesUsed}/5!`;
+      endScore.className = 'end-state-score win-text';
+      endSub.textContent = 'Nice work, sleuth. Come back tomorrow.';
+    } else {
+      endScore.textContent = 'Better luck tomorrow!';
+      endScore.className = 'end-state-score lose-text';
+      endSub.textContent = `The answer was ${config.answer}.`;
+    }
+    emojiGrid.textContent = buildEmojiGrid(result);
+  }
+
+  function buildEmojiGrid(result) {
+    const wrong = state.wrongGuesses.map(() => '🟥');
+    if (result === 'win') wrong[wrong.length - 1] = '🟩';
+    // pad remaining
+    while (wrong.length < MAX_GUESSES && result === 'lose') wrong.push('🟥');
+    return wrong.join('');
+  }
+
+  function shareResult() {
+    const sportEmoji = { mlb: '⚾', nba: '🏀', nfl: '🏈' }[sport];
+    const sportName = sport.toUpperCase();
+    const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const emoji = buildEmojiGrid(state.result);
+    const scoreText = state.result === 'win'
+      ? `Got it in ${state.guessesUsed}/5!`
+      : 'Couldn\'t crack it!';
+
+    const text = [
+      `🔍 StatSleuth ${sportEmoji} ${sportName} — ${date}`,
+      emoji,
+      scoreText,
+      `Play: statsleuth.com/${sport}`
+    ].join('\n');
+
+    navigator.clipboard.writeText(text).then(() => {
+      shareBtn.textContent = '✓ Copied!';
+      shareBtn.classList.add('copied');
+      setTimeout(() => {
+        shareBtn.textContent = '🔗 Share Result';
+        shareBtn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // ────────────────────────────────────────────
+  function restoreUI() {
+    if (!state) {
+      state = { wrongGuesses: [], result: null, guessesUsed: 0, locked: false };
+      saveState();
+      return;
+    }
+
+    // Restore wrong guesses
+    state.wrongGuesses.forEach((name, i) => {
+      if (pips[i]) pips[i].classList.add('wrong');
+      addWrongGuessTag(name);
+      if (i < clueRows.length) clueRows[i].classList.add('revealed');
+    });
+
+    if (state.locked) {
+      searchInput.disabled = true;
+      guessBtn.disabled = true;
+      lockedBanner.classList.add('show');
+
+      if (state.result === 'win') {
+        revealAllClues();
+        revealCardHeader(true);
+        card.classList.add('win');
+        showEndState('win');
+      } else if (state.result === 'lose') {
+        revealAllClues();
+        revealCardHeader(false);
+        card.classList.add('lose');
+        showEndState('lose');
+      }
+    }
+  }
+
+  // ────────────────────────────────────────────
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch { return null; }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {}
+  }
+
+  function getTodayKey() {
+    const d = new Date();
+    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+  }
+
+  function shake(el) {
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = 'shake 0.35s ease';
+    setTimeout(() => el.style.animation = '', 400);
+  }
+}
+
+// ── CSS shake keyframe injected once ──
+const shakeStyle = document.createElement('style');
+shakeStyle.textContent = `
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}`;
+document.head.appendChild(shakeStyle);

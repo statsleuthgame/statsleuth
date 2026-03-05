@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StatSleuth 🏀 NBA</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    :root {
+      --accent: #e07020;
+      --accent-light: #fef0e6;
+      --accent-glow: rgba(224,112,32,0.12);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, #e07020 0%, #b35a10 100%);
+    }
+
+    /* Basketball lines texture */
+    .card-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* Vertical seam */
+      background-image:
+        radial-gradient(ellipse 3px 110px at 50% 50%, rgba(0,0,0,0.2) 0%, transparent 100%),
+        /* Horizontal seam */
+        radial-gradient(ellipse 110px 3px at 50% 50%, rgba(0,0,0,0.2) 0%, transparent 100%),
+        /* Curved seams */
+        radial-gradient(ellipse 80px 80px at 20% 50%, transparent 48%, rgba(0,0,0,0.15) 49%, rgba(0,0,0,0.15) 51%, transparent 52%),
+        radial-gradient(ellipse 80px 80px at 80% 50%, transparent 48%, rgba(0,0,0,0.15) 49%, rgba(0,0,0,0.15) 51%, transparent 52%);
+      z-index: 1;
+    }
+
+    .card-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .sport-badge {
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.6);
+      z-index: 4;
+    }
+
+    .stat-sleuth-badge {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.6);
+      z-index: 4;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="mlb.html">🔍 <span>STAT</span>SLEUTH</a>
+  <ul class="nav-links">
+    <li><a href="mlb.html">⚾ MLB</a></li>
+    <li><a href="nba.html" class="active">🏀 NBA</a></li>
+    <li><a href="nfl.html">🏈 NFL</a></li>
+  </ul>
+  <div class="nav-spacer"></div>
+  <div class="nav-date" id="nav-date"></div>
+</nav>
+
+<main>
+
+  <div class="page-header">
+    <h1>🏀 <span>NBA</span> DAILY</h1>
+    <p class="eligibility-note">Players must have a minimum of 25 Games Played in the clue year to be eligible</p>
+  </div>
+
+  <!-- THE CARD -->
+  <div class="card-wrapper">
+    <div class="sports-card" id="sports-card">
+
+      <div class="card-header" id="card-header">
+        <span class="sport-badge">NBA</span>
+        <span class="stat-sleuth-badge">STATSLEUTH</span>
+        <div class="mystery-icon">🏀</div>
+        <div class="player-name-reveal" id="player-name-reveal"></div>
+      </div>
+
+      <div class="clue-row" id="clue-0">
+        <div class="clue-row-locked">
+          <div class="lock-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="clue-row-inner">
+          <div class="clue-number">1</div>
+          <div class="clue-content">
+            <div class="clue-label">Year</div>
+            <div class="clue-value" id="clue-val-0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clue-row" id="clue-1">
+        <div class="clue-row-locked">
+          <div class="lock-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="clue-row-inner">
+          <div class="clue-number">2</div>
+          <div class="clue-content">
+            <div class="clue-label">PRA Average (Pts / Reb / Ast)</div>
+            <div class="clue-value" id="clue-val-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clue-row" id="clue-2">
+        <div class="clue-row-locked">
+          <div class="lock-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="clue-row-inner">
+          <div class="clue-number">3</div>
+          <div class="clue-content">
+            <div class="clue-label">Draft Year / Position</div>
+            <div class="clue-value" id="clue-val-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clue-row" id="clue-3">
+        <div class="clue-row-locked">
+          <div class="lock-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="clue-row-inner">
+          <div class="clue-number">4</div>
+          <div class="clue-content">
+            <div class="clue-label">Conference</div>
+            <div class="clue-value" id="clue-val-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clue-row" id="clue-4">
+        <div class="clue-row-locked">
+          <div class="lock-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="clue-row-inner">
+          <div class="clue-number">5</div>
+          <div class="clue-content">
+            <div class="clue-label">Team</div>
+            <div class="clue-value" id="clue-val-4"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="guess-area" id="guess-area">
+    <div class="guess-count">
+      <div class="guess-pip" id="pip-0"></div>
+      <div class="guess-pip" id="pip-1"></div>
+      <div class="guess-pip" id="pip-2"></div>
+      <div class="guess-pip" id="pip-3"></div>
+      <div class="guess-pip" id="pip-4"></div>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input"
+        placeholder="Search for a player..." autocomplete="off" spellcheck="false" />
+      <div class="autocomplete-dropdown" id="autocomplete-dropdown"></div>
+    </div>
+    <button class="guess-btn" id="guess-btn">Submit Guess</button>
+  </div>
+
+  <div class="wrong-guesses" id="wrong-guesses" style="display:none;">
+    <div class="wrong-guesses-title">Previous Guesses</div>
+    <div id="wrong-guesses-list"></div>
+  </div>
+
+  <div class="locked-banner" id="locked-banner">
+    🔒 Come back tomorrow for a new player!
+  </div>
+
+  <div class="end-state" id="end-state">
+    <div class="end-state-score" id="end-score"></div>
+    <div class="end-state-sub" id="end-sub"></div>
+    <div class="emoji-grid" id="emoji-grid"></div>
+    <button class="share-btn" id="share-btn">🔗 Share Result</button>
+    <div class="come-back">New player tomorrow at midnight</div>
+  </div>
+
+</main>
+
+<script src="config.js"></script>
+<script src="game.js"></script>
+<script>
+  document.getElementById('nav-date').textContent =
+    new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+  const cfg = STATSLEUTH_CONFIG.nba;
+  cfg.clues.forEach((clue, i) => {
+    const el = document.getElementById(`clue-val-${i}`);
+    if (el) el.textContent = clue.value;
+  });
+
+  initGame('nba', cfg);
+</script>
+</body>
+</html>
