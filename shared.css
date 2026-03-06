@@ -290,39 +290,44 @@ main {
   filter: blur(0px);
 }
 
-.card-header-revealed {
+.card-header .player-name-reveal {
   position: absolute;
-  inset: 0;
+  left: 0; right: 0;
+  top: 0; bottom: 46px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 26px 12px 10px;
-  opacity: 0;
-  transition: opacity 0.5s 0.2s;
-  z-index: 3;
-}
-
-.card-header.revealed .card-header-revealed { opacity: 1; }
-
-.player-name-reveal {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 24px;
   letter-spacing: 2px;
   color: white;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
   text-align: center;
-  line-height: 1;
+  padding: 0 12px;
+  opacity: 0;
+  transition: opacity 0.5s 0.2s;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.player-accolades-reveal {
+.card-header.revealed .player-name-reveal { opacity: 1; }
+
+.card-header .player-accolades-reveal {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
   justify-content: center;
-  padding: 0 8px;
+  gap: 4px;
+  padding: 0 10px;
+  opacity: 0;
+  transition: opacity 0.5s 0.35s;
+  z-index: 3;
+  pointer-events: none;
 }
+
+.card-header.revealed .player-accolades-reveal { opacity: 1; }
 
 .accolade-badge {
   font-size: 9px;
