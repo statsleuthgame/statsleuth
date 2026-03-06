@@ -481,6 +481,7 @@ main {
 .wrong-guesses {
   width: 100%;
   max-width: 360px;
+  overflow: hidden;
 }
 
 .wrong-guesses-title {
@@ -600,6 +601,23 @@ main {
 .autocomplete-dropdown::-webkit-scrollbar-track { background: transparent; }
 .autocomplete-dropdown::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
+/* ── GAME LAYOUT — MOBILE (column, default) ── */
+.game-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.controls-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+}
+
 /* ── DESKTOP SIDE-BY-SIDE LAYOUT ── */
 @media (min-width: 768px) {
   main {
@@ -608,11 +626,11 @@ main {
   }
 
   .game-layout {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 48px;
     justify-content: center;
+    width: auto;
   }
 
   .card-col {
@@ -620,10 +638,8 @@ main {
   }
 
   .controls-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
     width: 340px;
+    max-width: 340px;
     padding-top: 8px;
   }
 
@@ -658,6 +674,8 @@ main {
 
   .search-input { padding: 10px 14px; font-size: 16px; }
   .guess-btn { padding: 10px; font-size: 14px; }
+
+  .guess-count { padding-top: 4px; }
 
   nav { padding: 0 12px; gap: 4px; }
   .nav-logo { font-size: 17px; margin-right: 6px; }
