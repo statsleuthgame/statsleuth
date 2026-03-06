@@ -576,6 +576,46 @@ main {
 .autocomplete-dropdown::-webkit-scrollbar-track { background: transparent; }
 .autocomplete-dropdown::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
+/* ── DESKTOP SIDE-BY-SIDE LAYOUT ── */
+@media (min-width: 768px) {
+  main {
+    align-items: center;
+    padding: 32px 24px 48px;
+  }
+
+  .game-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+    justify-content: center;
+  }
+
+  .card-col {
+    flex-shrink: 0;
+  }
+
+  .controls-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 340px;
+    padding-top: 8px;
+  }
+
+  .guess-area {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .wrong-guesses,
+  .end-state,
+  .locked-banner {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 480px) {
   :root {
