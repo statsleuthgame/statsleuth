@@ -141,7 +141,8 @@ function initGame(sport, config) {
     searchInput.value = '';
     closeDropdown();
 
-    const correct = matched.toLowerCase() === config.answer.toLowerCase();
+    const matchedName = matched.replace(/\s*\(\d{4}-[\w]+\)$/, '').trim();
+    const correct = matchedName.toLowerCase() === config.answer.toLowerCase();
 
     if (correct) {
       state.result = 'win';
