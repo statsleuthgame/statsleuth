@@ -156,10 +156,9 @@ function initGame(sport, config) {
       state.result = 'win';
       state.guessesUsed = state.wrongGuesses.length + 1;
       state.locked = true;
-      revealAllClues();
-      revealCardHeader(true);
       card.classList.add('win');
-      setTimeout(() => showEndState('win'), 600);
+      triggerWinSweep();
+      setTimeout(() => showEndState('win'), 950);
     } else {
       state.wrongGuesses.push(matched);
       updatePips();
@@ -203,6 +202,19 @@ function initGame(sport, config) {
   function revealAllClues() {
     clueRows.forEach((row, i) => {
       setTimeout(() => row.classList.add('revealed'), i * 80);
+    });
+  }
+
+  function triggerWinSweep() {
+    card.classList.add('win-sweep');
+    // Header is at the top — unmask as sweep first hits (~80ms)
+    setTimeout(() => {
+      cardHeader.classList.add('revealed');
+      playerReveal.textContent = config.answer;
+    }, 80);
+    // Stagger each clue row to match the sweep traveling down the card
+    [230, 360, 480, 600, 720].forEach((delay, i) => {
+      setTimeout(() => { if (clueRows[i]) clueRows[i].classList.add('revealed'); }, delay);
     });
   }
 
