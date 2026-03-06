@@ -290,13 +290,24 @@ main {
   filter: blur(0px);
 }
 
-.card-header .player-name-reveal {
+.card-header .player-reveal-group {
   position: absolute;
-  left: 0; right: 0;
-  top: 0; bottom: 46px;
+  inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  padding: 20px 10px 10px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s 0.2s;
+}
+
+.card-header.revealed .player-reveal-group { opacity: 1; }
+
+.card-header .player-name-reveal {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 30px;
   letter-spacing: 2px;
@@ -304,30 +315,15 @@ main {
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
   text-align: center;
   padding: 0 12px;
-  opacity: 0;
-  transition: opacity 0.5s 0.2s;
-  z-index: 3;
-  pointer-events: none;
 }
 
-.card-header.revealed .player-name-reveal { opacity: 1; }
-
 .card-header .player-accolades-reveal {
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
   padding: 0 10px;
-  opacity: 0;
-  transition: opacity 0.5s 0.35s;
-  z-index: 3;
-  pointer-events: none;
 }
-
-.card-header.revealed .player-accolades-reveal { opacity: 1; }
 
 .accolade-badge {
   font-size: 9px;
@@ -483,7 +479,7 @@ main {
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   z-index: 50;
-  max-height: 200px;
+  max-height: 320px;
   overflow-y: auto;
   display: none;
 }

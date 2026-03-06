@@ -46,6 +46,13 @@ function initGame(sport, config) {
   updateAvgDisplay(loadHistory());
 
   // ── Search / autocomplete ──
+  searchInput.addEventListener('focus', () => {
+    setTimeout(() => {
+      const rect = searchInput.getBoundingClientRect();
+      const scrollTop = window.pageYOffset + rect.top - 68; // 56px nav + 12px breathing room
+      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+    }, 150);
+  });
   searchInput.addEventListener('input', onSearchInput);
   searchInput.addEventListener('keydown', onSearchKeydown);
   searchInput.addEventListener('blur', () => {
