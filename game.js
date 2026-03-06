@@ -27,7 +27,6 @@ function initGame(sport, config) {
   const emojiGrid   = document.getElementById('emoji-grid');
   const shareBtn    = document.getElementById('share-btn');
   const lockedBanner= document.getElementById('locked-banner');
-  const guessArea   = document.getElementById('guess-area');
   const mysteryName = document.getElementById('mystery-name');
 
   // ── Set blurred mystery name ──
@@ -375,7 +374,7 @@ function initGame(sport, config) {
     const el = document.getElementById('nav-avg');
     if (!el || !history.length) return;
     const avg = (history.reduce((sum, h) => sum + h.guesses, 0) / history.length).toFixed(1);
-    el.textContent = `avg ${avg}`;
+    el.innerHTML = `<span class="nav-avg-label">Avg Guess</span><span class="nav-avg-value">${avg}</span>`;
   }
 }
 

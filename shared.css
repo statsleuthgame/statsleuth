@@ -97,15 +97,33 @@ nav {
 }
 
 .nav-avg {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-family: 'DM Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 3px 10px;
+  border-radius: 10px;
+  padding: 4px 10px;
   margin-left: 4px;
+  line-height: 1;
+  gap: 2px;
   white-space: nowrap;
+}
+
+.nav-avg-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+}
+
+.nav-avg-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
 }
 
 /* ── MAIN LAYOUT ── */
