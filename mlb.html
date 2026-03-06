@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StatSleuth ⚾ MLB</title>
+  <title>StatMask ⚾ MLB</title>
   <link rel="stylesheet" href="shared.css" />
   <style>
     :root {
@@ -108,7 +108,7 @@
 
       <div class="card-header" id="card-header">
         <span class="sport-badge">MLB</span>
-        <span class="stat-sleuth-badge">STATSLEUTH</span>
+        <span class="stat-sleuth-badge">STATMASK</span>
         <div class="mystery-icon">⚾</div>
         <div class="player-name-reveal" id="player-name-reveal"></div>
       </div>
@@ -242,7 +242,7 @@
     new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 
   // Populate clue values from config
-  const cfg = STATSLEUTH_CONFIG.mlb;
+  const cfg = STATMASK_CONFIG.mlb;
   cfg.clues.forEach((clue, i) => {
     const el = document.getElementById(`clue-val-${i}`);
     if (el) el.textContent = clue.value;

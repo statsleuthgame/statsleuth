@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StatSleuth 🏀 NBA</title>
+  <title>StatMask 🏀 NBA</title>
   <link rel="stylesheet" href="shared.css" />
   <style>
     :root {
@@ -99,7 +99,7 @@
 
       <div class="card-header" id="card-header">
         <span class="sport-badge">NBA</span>
-        <span class="stat-sleuth-badge">STATSLEUTH</span>
+        <span class="stat-sleuth-badge">STATMASK</span>
         <div class="mystery-icon">🏀</div>
         <div class="player-name-reveal" id="player-name-reveal"></div>
       </div>
@@ -150,7 +150,7 @@
         <div class="clue-row-inner">
           <div class="clue-number">4</div>
           <div class="clue-content">
-            <div class="clue-label">Conference</div>
+            <div class="clue-label">College</div>
             <div class="clue-value" id="clue-val-3"></div>
           </div>
         </div>
@@ -216,7 +216,7 @@
   document.getElementById('nav-date').textContent =
     new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 
-  const cfg = STATSLEUTH_CONFIG.nba;
+  const cfg = STATMASK_CONFIG.nba;
   cfg.clues.forEach((clue, i) => {
     const el = document.getElementById(`clue-val-${i}`);
     if (el) el.textContent = clue.value;

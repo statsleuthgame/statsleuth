@@ -1,42 +1,42 @@
 // ============================================================
-// STATSLEUTH — DAILY CONFIG
+// STATMASK — DAILY CONFIG
 // Update this file each day with the player + clues
 // ============================================================
 
-const STATSLEUTH_CONFIG = {
+const STATMASK_CONFIG = {
 
   mlb: {
-    answer: "Josh Bell",
+    answer: "Nolan Arenado",
     clues: [
-      { label: "Year", value: "2022" },
-      { label: "Batting Average", value: ".266" },
-      { label: "Position / Throws", value: "(1B/DH) / Right" },
+      { label: "Year", value: "2025" },
+      { label: "Batting Average", value: ".237" },
+      { label: "Position / Throws", value: "3B / Right" },
       { label: "League", value: "National League" },
-      { label: "Team", value: "San Diego Padres/Washington Nationals" }
+      { label: "Team", value: "St. Louis Cardinals" }
     ],
     players: MLB_PLAYERS
   },
 
   nba: {
-    answer: "Christian Wood",
+    answer: "Karl-Anthony Towns",
     clues: [
-      { label: "Year", value: "2022-2023" },
-      { label: "Draft Year / Position", value: "2015 / PF" },
-      { label: "Season PPG", value: "16.6" },
-      { label: "Conference", value: "Western" },
-      { label: "Team", value: "Dallas Mavericks" }
+      { label: "Year", value: "2024-2025" },
+      { label: "Draft Year / Position", value: "2015 / PF/C" },
+      { label: "Season PPG", value: "24.4" },
+      { label: "College", value: "Kentucky" },
+      { label: "Team", value: "New York Knicks" }
     ],
     players: NBA_PLAYERS
   },
 
   nfl: {
-    answer: "Ezekiel Elliott",
+    answer: "Tee Higgins",
     clues: [
-      { label: "Year", value: "2022" },
-      { label: "Draft Year / Position", value: "2016 / RB" },
-      { label: "Rushing Yards", value: "876" },
-      { label: "Conference", value: "NFC" },
-      { label: "Team", value: "Dallas Cowboys" }
+      { label: "Year", value: "2025" },
+      { label: "Draft Year / Position", value: "2020 / WR" },
+      { label: "Receiving Yards", value: "846" },
+      { label: "Conference", value: "AFC" },
+      { label: "Team", value: "Cincinnati Bengals" }
     ],
     players: NFL_PLAYERS
   }

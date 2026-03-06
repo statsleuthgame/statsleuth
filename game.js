@@ -1,5 +1,5 @@
 // ============================================================
-// STATSLEUTH — GAME ENGINE
+// STATMASK — GAME ENGINE
 // ============================================================
 
 function initGame(sport, config) {
@@ -254,10 +254,10 @@ function initGame(sport, config) {
       : 'Couldn\'t crack it!';
 
     const text = [
-      `🔍 StatSleuth ${sportEmoji} ${sportName} — ${date}`,
+      `StatMask ${sportEmoji} ${sportName} — ${date}`,
       emoji,
       scoreText,
-      `Play: statsleuth.com/${sport}`
+      `Play: statmask.com/${sport}`
     ].join('\n');
 
     navigator.clipboard.writeText(text).then(() => {
