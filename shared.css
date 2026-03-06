@@ -382,7 +382,7 @@ main {
   padding: 13px 18px;
   border: 2px solid var(--border);
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: 'DM Sans', sans-serif;
   background: var(--surface);
   color: var(--text);
@@ -592,7 +592,7 @@ main {
   .card-header { height: 86px; }
   .card-header .mystery-icon { font-size: 38px; }
 
-  .search-input { padding: 10px 14px; font-size: 14px; }
+  .search-input { padding: 10px 14px; font-size: 16px; }
   .guess-btn { padding: 10px; font-size: 14px; }
 
   nav { padding: 0 12px; gap: 4px; }
