@@ -46,11 +46,59 @@ function initGame(sport, config) {
   updateAvgDisplay(loadHistory());
 
   // ── Search / autocomplete ──
+  let searchActive = false;
+
+  // Measures visualViewport space above/below input and positions the dropdown
+  function positionDropdown() {
+    if (!dropdown.classList.contains('open')) return;
+    const vp = window.visualViewport;
+    const vpHeight = vp ? vp.height : window.innerHeight;
+    const vpTop    = vp ? vp.offsetTop : 0;
+    const rect = searchInput.getBoundingClientRect();
+    const spaceBelow = vpHeight - (rect.bottom - vpTop) - 8;
+    const spaceAbove = (rect.top - vpTop) - 8;
+
+    if (spaceBelow >= 100 || spaceBelow >= spaceAbove) {
+      dropdown.style.top    = 'calc(100% + 6px)';
+      dropdown.style.bottom = 'auto';
+      dropdown.style.maxHeight = Math.max(80, Math.min(320, spaceBelow)) + 'px';
+    } else {
+      // Flip upward — more room above than below
+      dropdown.style.bottom = 'calc(100% + 6px)';
+      dropdown.style.top    = 'auto';
+      dropdown.style.maxHeight = Math.max(80, Math.min(320, spaceAbove)) + 'px';
+    }
+  }
+
+  searchInput.addEventListener('focus', () => {
+    if (searchActive) return;
+    searchActive = true;
+    // Capture absolute doc position before keyboard shifts layout
+    let el = searchInput, absTop = 0;
+    while (el) { absTop += el.offsetTop; el = el.offsetParent; }
+    setTimeout(() => {
+      window.scrollTo({ top: absTop - 68, behavior: 'smooth' }); // 56px nav + 12px gap
+      positionDropdown();
+    }, 350);
+  });
+
   searchInput.addEventListener('input', onSearchInput);
   searchInput.addEventListener('keydown', onSearchKeydown);
+
   searchInput.addEventListener('blur', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      if (document.activeElement !== searchInput) {
+        searchActive = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 500);
   });
+
+  // Reposition whenever the visual viewport resizes (keyboard appear/disappear)
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', positionDropdown);
+  }
+
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-container')) closeDropdown();
   });
@@ -85,6 +133,7 @@ function initGame(sport, config) {
     dropdown.classList.add('open');
     dropdown._matches = matches;
     dropdown._activeIndex = -1;
+    positionDropdown();
   }
 
   function highlight(name, q) {
@@ -133,6 +182,9 @@ function initGame(sport, config) {
   function closeDropdown() {
     dropdown.classList.remove('open');
     dropdown.innerHTML = '';
+    dropdown.style.top = '';
+    dropdown.style.bottom = '';
+    dropdown.style.maxHeight = '';
   }
 
   // ────────────────────────────────────────────
