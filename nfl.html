@@ -21,41 +21,34 @@
       --accent-glow: rgba(46,125,82,0.12);
     }
 
+    /* Football Field */
     .card-header {
-      background: linear-gradient(135deg, #2e7d52 0%, #1a5c3a 100%);
+      background: repeating-linear-gradient(
+        to right,
+        #2d8030 0px, #2d8030 29px,
+        rgba(255,255,255,0.82) 29px, rgba(255,255,255,0.82) 31px,
+        #35913a 31px, #35913a 60px,
+        rgba(255,255,255,0.82) 60px, rgba(255,255,255,0.82) 62px
+      );
+      overflow: hidden;
     }
 
-    /* Football laces texture */
+    /* Top/bottom vignette for depth + text readability */
     .card-header::before {
       content: '';
       position: absolute;
       inset: 0;
-      /* Football pointed ends shape via radial */
-      background-image:
-        radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 100%);
       z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.32) 0%,
+        rgba(0,0,0,0.06) 40%,
+        rgba(0,0,0,0.06) 60%,
+        rgba(0,0,0,0.32) 100%
+      );
     }
 
-    /* Lace lines */
-    .card-header::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 2px;
-      height: 60%;
-      background: rgba(255,255,255,0.2);
-      box-shadow:
-        -8px 0 0 1px rgba(255,255,255,0.12),
-         8px 0 0 1px rgba(255,255,255,0.12),
-        0 -12px 0 rgba(255,255,255,0.15),
-        0  12px 0 rgba(255,255,255,0.15),
-        0 -24px 0 rgba(255,255,255,0.1),
-        0  24px 0 rgba(255,255,255,0.1);
-      z-index: 1;
-      border-radius: 2px;
-    }
+    .card-header::after { content: none; }
 
     .sport-badge {
       position: absolute;
