@@ -727,16 +727,33 @@ main {
 @media (max-width: 480px) {
   :root {
     --card-width: min(300px, calc(100vw - 32px));
-    --card-height: 390px;
+    --card-height: 240px;
   }
 
-  main { padding: 20px 16px 20px; gap: 12px; }
+  main { padding: 16px 16px 16px; gap: 10px; }
 
-  .page-header h1 { font-size: 32px; }
-  .game-subtitle { font-size: 13px; }
-  .eligibility-note { font-size: 10px; margin-top: 2px; }
+  .page-header h1 { font-size: 28px; }
+  .game-subtitle { font-size: 12px; margin-top: 4px; }
+  .eligibility-note { display: none; }
 
-  .card-header { min-height: 150px; }
+  .card-header { min-height: 110px; }
+
+  /* Compact unrevealed clue rows — thin placeholder lines */
+  .clue-row:not(.revealed) {
+    min-height: 22px;
+    padding: 0 18px;
+    justify-content: center;
+  }
+  .clue-row:not(.revealed) .clue-row-inner { display: none; }
+  .clue-row:not(.revealed)::after {
+    content: '· · ·';
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--border);
+  }
+
+  /* Tighter revealed rows */
+  .clue-row.revealed { padding: 10px 14px; min-height: 0; }
 
   .search-input { padding: 10px 14px; font-size: 16px; }
   .guess-btn { padding: 10px; font-size: 14px; }
@@ -753,14 +770,13 @@ main {
 @media (max-width: 390px) {
   :root {
     --card-width: calc(100vw - 28px);
-    --card-height: 360px;
+    --card-height: 200px;
   }
 
-  main { padding: 6px 14px 16px; gap: 10px; }
+  main { padding: 10px 14px 14px; gap: 8px; }
 
-  .page-header h1 { font-size: 28px; }
-  .game-subtitle { font-size: 12px; }
-  .eligibility-note { display: none; }
+  .page-header h1 { font-size: 24px; }
+  .game-subtitle { font-size: 11px; }
 
-  .card-header { min-height: 130px; }
+  .card-header { min-height: 95px; }
 }
