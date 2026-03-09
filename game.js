@@ -18,6 +18,7 @@ function initGame(sport, config) {
   const searchInput = document.getElementById('search-input');
   const dropdown    = document.getElementById('autocomplete-dropdown');
   const guessBtn    = document.getElementById('guess-btn');
+  const skipBtn     = document.getElementById('skip-btn');
   const pips        = document.querySelectorAll('.guess-pip');
   const wrongList   = document.getElementById('wrong-guesses-list');
   const wrongSection= document.getElementById('wrong-guesses');
@@ -99,6 +100,7 @@ function initGame(sport, config) {
   });
 
   guessBtn.addEventListener('click', submitGuess);
+  skipBtn.addEventListener('click', skipGuess);
   shareBtn.addEventListener('click', shareResult);
   shareBtn.textContent = navigator.share ? 'Share Result' : 'Copy Result';
 
@@ -256,7 +258,42 @@ function initGame(sport, config) {
     if (state.locked) {
       searchInput.disabled = true;
       guessBtn.disabled = true;
+      skipBtn.disabled = true;
       lockedBanner.classList.add('show');
+    }
+  }
+
+  // ────────────────────────────────────────────
+  function skipGuess() {
+    if (state.locked) return;
+
+    const skipIndex = state.wrongGuesses.length;
+    state.wrongGuesses.push('__skip__');
+    if (pips[skipIndex]) pips[skipIndex].classList.add('skip');
+    addWrongGuessTag('__skip__');
+    revealNextClue();
+
+    if (state.wrongGuesses.length >= MAX_GUESSES) {
+      state.result = 'lose';
+      state.guessesUsed = MAX_GUESSES;
+      state.locked = true;
+      revealAllClues();
+      revealCardHeader(false);
+      card.classList.add('lose');
+      recordGuesses(state.guessesUsed);
+      setTimeout(() => showEndState('lose'), 700);
+    }
+
+    saveState();
+
+    if (state.locked) {
+      searchInput.disabled = true;
+      guessBtn.disabled = true;
+      skipBtn.disabled = true;
+      lockedBanner.classList.add('show');
+    } else if (state.wrongGuesses.length >= MAX_GUESSES - 1) {
+      // Last guess — no more clues to reveal, hide skip
+      skipBtn.style.display = 'none';
     }
   }
 
@@ -295,16 +332,21 @@ function initGame(sport, config) {
   }
 
   function updatePips() {
-    state.wrongGuesses.forEach((_, i) => {
-      if (pips[i]) pips[i].classList.add('wrong');
+    state.wrongGuesses.forEach((g, i) => {
+      if (pips[i]) pips[i].classList.add(g === '__skip__' ? 'skip' : 'wrong');
     });
   }
 
   function addWrongGuessTag(name) {
     wrongSection.style.display = 'block';
     const tag = document.createElement('span');
-    tag.className = 'wrong-guess-tag';
-    tag.textContent = name;
+    if (name === '__skip__') {
+      tag.className = 'wrong-guess-tag skip-tag';
+      tag.textContent = 'Skipped';
+    } else {
+      tag.className = 'wrong-guess-tag';
+      tag.textContent = name;
+    }
     wrongList.appendChild(tag);
   }
 
@@ -376,14 +418,19 @@ function initGame(sport, config) {
 
     // Restore wrong guesses
     state.wrongGuesses.forEach((name, i) => {
-      if (pips[i]) pips[i].classList.add('wrong');
+      if (pips[i]) pips[i].classList.add(name === '__skip__' ? 'skip' : 'wrong');
       addWrongGuessTag(name);
       if (i < clueRows.length) clueRows[i].classList.add('revealed');
     });
 
+    if (!state.locked && state.wrongGuesses.length >= MAX_GUESSES - 1) {
+      skipBtn.style.display = 'none';
+    }
+
     if (state.locked) {
       searchInput.disabled = true;
       guessBtn.disabled = true;
+      skipBtn.disabled = true;
       lockedBanner.classList.add('show');
       recordGuesses(state.guessesUsed);
 

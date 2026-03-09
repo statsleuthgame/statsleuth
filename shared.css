@@ -457,6 +457,7 @@ main {
 }
 
 .guess-pip.wrong { background: var(--red); border-color: var(--red); }
+.guess-pip.skip { background: var(--text-light); border-color: var(--text-light); }
 .guess-pip.correct { background: var(--green); border-color: var(--green); }
 
 .search-container {
@@ -540,6 +541,24 @@ main {
 .guess-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; filter: none; }
 .guess-btn.correct { background: var(--green); pointer-events: none; }
 
+.skip-btn {
+  width: 100%;
+  padding: 9px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.skip-btn:hover { background: var(--bg); color: var(--text); border-color: var(--text-muted); }
+.skip-btn:active { transform: scale(0.97); }
+.skip-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
 /* ── WRONG GUESSES LIST ── */
 .wrong-guesses {
   width: 100%;
@@ -571,6 +590,12 @@ main {
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 20px;
+}
+
+.wrong-guess-tag.skip-tag {
+  background: var(--bg);
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* ── END STATE ── */
