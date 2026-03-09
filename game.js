@@ -100,7 +100,9 @@ function initGame(sport, config) {
   });
 
   guessBtn.addEventListener('click', submitGuess);
-  skipBtn.addEventListener('click', skipGuess);
+  skipBtn.addEventListener('click', () => {
+    skipBtn.classList.contains('give-up-mode') ? giveUp() : skipGuess();
+  });
   shareBtn.addEventListener('click', shareResult);
   shareBtn.textContent = navigator.share ? 'Share Result' : 'Copy Result';
 
@@ -109,10 +111,20 @@ function initGame(sport, config) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\./g, '');
   }
 
+  // Handles "Last, First" → "first last" so both formats match
+  function normalizeQuery(q) {
+    const n = normalize(q);
+    if (n.includes(',')) {
+      const [last, first] = n.split(',').map(s => s.trim());
+      return first ? `${first} ${last}` : last;
+    }
+    return n;
+  }
+
   function onSearchInput() {
     const q = searchInput.value.trim();
     if (q.length < 3) { closeDropdown(); return; }
-    const nq = normalize(q);
+    const nq = normalizeQuery(q);
     const matches = config.players.filter((_p, i) =>
       normalizedPlayers[i].includes(nq)
     ).slice(0, 8);
@@ -292,9 +304,27 @@ function initGame(sport, config) {
       skipBtn.disabled = true;
       lockedBanner.classList.add('show');
     } else if (state.wrongGuesses.length >= MAX_GUESSES - 1) {
-      // Last guess — no more clues to reveal, hide skip
-      skipBtn.style.display = 'none';
+      skipBtn.textContent = 'Give Up';
+      skipBtn.classList.add('give-up-mode');
     }
+  }
+
+  // ────────────────────────────────────────────
+  function giveUp() {
+    if (state.locked) return;
+    state.result = 'lose';
+    state.guessesUsed = state.wrongGuesses.length;
+    state.locked = true;
+    revealAllClues();
+    revealCardHeader(false);
+    card.classList.add('lose');
+    recordGuesses(state.guessesUsed);
+    saveState();
+    searchInput.disabled = true;
+    guessBtn.disabled = true;
+    skipBtn.disabled = true;
+    lockedBanner.classList.add('show');
+    setTimeout(() => showEndState('lose'), 700);
   }
 
   // ────────────────────────────────────────────
@@ -424,7 +454,8 @@ function initGame(sport, config) {
     });
 
     if (!state.locked && state.wrongGuesses.length >= MAX_GUESSES - 1) {
-      skipBtn.style.display = 'none';
+      skipBtn.textContent = 'Give Up';
+      skipBtn.classList.add('give-up-mode');
     }
 
     if (state.locked) {

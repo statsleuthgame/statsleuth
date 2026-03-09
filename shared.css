@@ -558,6 +558,8 @@ main {
 .skip-btn:hover { background: var(--bg); color: var(--text); border-color: var(--text-muted); }
 .skip-btn:active { transform: scale(0.97); }
 .skip-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.skip-btn.give-up-mode { color: var(--red); border-color: var(--red); }
+.skip-btn.give-up-mode:hover { background: var(--red-light); border-color: var(--red); color: var(--red); }
 
 /* ── WRONG GUESSES LIST ── */
 .wrong-guesses {
