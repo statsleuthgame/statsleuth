@@ -28,6 +28,10 @@ function initGame(sport, config) {
   const shareBtn    = document.getElementById('share-btn');
   const lockedBanner= document.getElementById('locked-banner');
   const mysteryName = document.getElementById('mystery-name');
+  const navAvg      = document.getElementById('nav-avg');
+
+  // ── Pre-normalize player list once for fast search ──
+  const normalizedPlayers = config.players.map(p => normalize(p));
 
   // ── Set blurred mystery name ──
   if (mysteryName) mysteryName.textContent = config.answer;
@@ -105,8 +109,9 @@ function initGame(sport, config) {
   function onSearchInput() {
     const q = searchInput.value.trim();
     if (q.length < 3) { closeDropdown(); return; }
-    const matches = config.players.filter(p =>
-      normalize(p).includes(normalize(q))
+    const nq = normalize(q);
+    const matches = config.players.filter((_p, i) =>
+      normalizedPlayers[i].includes(nq)
     ).slice(0, 8);
     renderDropdown(matches, q);
   }
@@ -302,7 +307,7 @@ function initGame(sport, config) {
   function showEndState(result) {
     endState.classList.add('show');
     if (result === 'win') {
-      endScore.textContent = `Got it in ${state.guessesUsed}/5!`;
+      endScore.textContent = `Got it in ${state.guessesUsed}/${MAX_GUESSES}!`;
       endScore.className = 'end-state-score win-text';
       endSub.textContent = 'Nice work, sleuth. Come back tomorrow.';
     } else {
@@ -326,7 +331,7 @@ function initGame(sport, config) {
     const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     const emoji = buildEmojiGrid(state.result);
     const scoreText = state.result === 'win'
-      ? `Got it in ${state.guessesUsed}/5!`
+      ? `Got it in ${state.guessesUsed}/${MAX_GUESSES}!`
       : 'Couldn\'t crack it!';
 
     const text = [
@@ -351,8 +356,6 @@ function initGame(sport, config) {
     if (!state) {
       state = { wrongGuesses: [], result: null, guessesUsed: 0, locked: false };
       saveState();
-      clueRows[0].classList.add('revealed');
-      return;
     }
 
     // Always show first clue
@@ -422,21 +425,23 @@ function initGame(sport, config) {
     const today = getTodayKey();
     if (history.some(h => h.date === today)) return;
     history.push({ date: today, guesses });
+    if (history.length > 365) history.splice(0, history.length - 365);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     updateAvgDisplay(history);
   }
 
   function updateAvgDisplay(history) {
-    const el = document.getElementById('nav-avg');
-    if (!el || !history.length) return;
+    if (!navAvg || !history.length) return;
     const avg = (history.reduce((sum, h) => sum + h.guesses, 0) / history.length).toFixed(1);
-    el.innerHTML = `<span class="nav-avg-label">Avg Guess</span><span class="nav-avg-value">${avg}</span>`;
+    navAvg.innerHTML = `<span class="nav-avg-label">Avg Guess</span><span class="nav-avg-value">${avg}</span>`;
   }
 }
 
 // ── CSS shake keyframe injected once ──
-const shakeStyle = document.createElement('style');
-shakeStyle.textContent = `
+if (!document.getElementById('statmask-shake-style')) {
+  const shakeStyle = document.createElement('style');
+  shakeStyle.id = 'statmask-shake-style';
+  shakeStyle.textContent = `
 @keyframes shake {
   0%,100% { transform: translateX(0); }
   20%      { transform: translateX(-6px); }
@@ -444,4 +449,5 @@ shakeStyle.textContent = `
   60%      { transform: translateX(-4px); }
   80%      { transform: translateX(4px); }
 }`;
-document.head.appendChild(shakeStyle);
+  document.head.appendChild(shakeStyle);
+}
