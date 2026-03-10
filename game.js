@@ -203,7 +203,14 @@ function initGame(sport, config) {
     searchInput.blur();
     searchActive = false;
     unlockScroll();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Wait for the virtual keyboard to finish dismissing, then scroll
+    // so the Skip button (bottom of the guess area) is fully in view.
+    setTimeout(() => {
+      const rect = skipBtn.getBoundingClientRect();
+      if (rect.bottom > window.innerHeight - 16) {
+        window.scrollBy({ top: rect.bottom - window.innerHeight + 32, behavior: 'smooth' });
+      }
+    }, 350);
   }
 
   function closeDropdown() {
