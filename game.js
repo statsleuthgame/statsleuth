@@ -500,7 +500,7 @@ function initGame(sport, config) {
     state.wrongGuesses.forEach((name, i) => {
       if (pips[i]) pips[i].classList.add(name === '__skip__' ? 'skip' : 'wrong');
       addWrongGuessTag(name);
-      if (i < clueRows.length) clueRows[i].classList.add('revealed');
+      if (i + 1 < clueRows.length) clueRows[i + 1].classList.add('revealed');
     });
 
     if (!state.locked && state.wrongGuesses.length >= MAX_GUESSES - 1) {
