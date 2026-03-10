@@ -6,6 +6,7 @@ function initGame(sport, config) {
   const MAX_GUESSES = 5;
   const STORAGE_KEY = `statsleuth_v2_${sport}_${getTodayKey()}`;
   const HISTORY_KEY = `statmask_history_${sport}`;
+  const STREAK_KEY  = `statmask_streak_${sport}`;
 
   // ── Load saved state ──
   let state = loadState();
@@ -30,6 +31,8 @@ function initGame(sport, config) {
   const lockedBanner= document.getElementById('locked-banner');
   const mysteryName = document.getElementById('mystery-name');
   const navAvg      = document.getElementById('nav-avg');
+  const navStreak   = document.getElementById('nav-streak');
+  const streakDisplay = document.getElementById('streak-display');
 
   // ── Pre-normalize player list once for fast search ──
   const normalizedPlayers = config.players.map(p => normalize(p));
@@ -52,6 +55,7 @@ function initGame(sport, config) {
   // ── Restore state on load ──
   restoreUI();
   updateAvgDisplay(loadHistory());
+  displayNavStreak();
 
   // ── Search / autocomplete ──
   let searchActive = false;
@@ -246,6 +250,8 @@ function initGame(sport, config) {
       guessBtn.classList.add('correct');
       card.classList.add('win');
       triggerWinSweep();
+      updateStreak(true);
+      displayNavStreak();
       recordGuesses(state.guessesUsed);
       setTimeout(() => showEndState('win'), 950);
     } else {
@@ -265,6 +271,8 @@ function initGame(sport, config) {
         revealAllClues();
         revealCardHeader(false);
         card.classList.add('lose');
+        updateStreak(false);
+        displayNavStreak();
         recordGuesses(state.guessesUsed);
         setTimeout(() => showEndState('lose'), 700);
       }
@@ -297,6 +305,8 @@ function initGame(sport, config) {
       revealAllClues();
       revealCardHeader(false);
       card.classList.add('lose');
+      updateStreak(false);
+      displayNavStreak();
       recordGuesses(state.guessesUsed);
       setTimeout(() => showEndState('lose'), 700);
     }
@@ -323,6 +333,8 @@ function initGame(sport, config) {
     revealAllClues();
     revealCardHeader(false);
     card.classList.add('lose');
+    updateStreak(false);
+    displayNavStreak();
     recordGuesses(state.guessesUsed);
     saveState();
     searchInput.disabled = true;
@@ -387,14 +399,24 @@ function initGame(sport, config) {
 
   function showEndState(result) {
     endState.classList.add('show');
+    const streak = loadStreak();
     if (result === 'win') {
       endScore.textContent = `Got it in ${state.guessesUsed}/${MAX_GUESSES}!`;
       endScore.className = 'end-state-score win-text';
       endSub.textContent = 'Nice work, sleuth. Come back tomorrow.';
+      if (streakDisplay) {
+        if (streak.count >= 2) {
+          streakDisplay.textContent = `🔥 ${streak.count}-day streak`;
+          streakDisplay.style.display = '';
+        } else {
+          streakDisplay.style.display = 'none';
+        }
+      }
     } else {
       endScore.textContent = 'Better luck tomorrow!';
       endScore.className = 'end-state-score lose-text';
       endSub.textContent = `The answer was ${config.answer}.`;
+      if (streakDisplay) streakDisplay.style.display = 'none';
     }
     emojiGrid.textContent = buildEmojiGrid(result);
     setTimeout(() => endState.focus(), 50);
@@ -408,19 +430,23 @@ function initGame(sport, config) {
   }
 
   function buildShareText() {
-    const sportEmoji = { mlb: '⚾', nba: '🏀', nfl: '🏈' }[sport];
-    const sportName = sport.toUpperCase();
-    const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const sportLabel = sport.toUpperCase();
     const emoji = buildEmojiGrid(state.result);
-    const scoreText = state.result === 'win'
-      ? `Got it in ${state.guessesUsed}/${MAX_GUESSES}!`
-      : "Couldn't crack it!";
-    return [
-      `StatMask ${sportEmoji} ${sportName} — ${date}`,
-      emoji,
-      scoreText,
-      `statmask.com/${sport}`
-    ].join('\n');
+    const streak = loadStreak();
+    const lines = [];
+
+    if (state.result === 'win') {
+      const clueWord = state.guessesUsed === 1 ? 'clue' : 'clues';
+      lines.push(`I unmasked today's ${sportLabel} Player in ${state.guessesUsed} ${clueWord}.`);
+      lines.push(emoji);
+      if (streak.count >= 2) lines.push(`🔥 ${streak.count}-day streak`);
+    } else {
+      lines.push(`I couldn't unmask today's ${sportLabel} Player.`);
+      lines.push(emoji);
+    }
+    lines.push(`#StatMask #${sportLabel}`);
+    lines.push(`statmask.com/${sport}`);
+    return lines.join('\n');
   }
 
   function shareResult() {
@@ -511,6 +537,53 @@ function initGame(sport, config) {
   }
 
   // ────────────────────────────────────────────
+  // ────────────────────────────────────────────
+  function getYesterdayKey() {
+    const d = new Date();
+    d.setDate(d.getDate() - 1);
+    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+  }
+
+  function loadStreak() {
+    try { return JSON.parse(localStorage.getItem(STREAK_KEY)) || { count: 0, lastWinDate: null }; }
+    catch { return { count: 0, lastWinDate: null }; }
+  }
+
+  function saveStreak(streak) {
+    try { localStorage.setItem(STREAK_KEY, JSON.stringify(streak)); } catch {}
+  }
+
+  function updateStreak(won) {
+    const streak = loadStreak();
+    const today = getTodayKey();
+    if (streak.lastWinDate === today) return streak; // already recorded today
+    if (won) {
+      streak.count = (streak.lastWinDate === getYesterdayKey()) ? streak.count + 1 : 1;
+      streak.lastWinDate = today;
+    } else {
+      streak.count = 0;
+      streak.lastWinDate = null;
+    }
+    saveStreak(streak);
+    return streak;
+  }
+
+  function displayNavStreak() {
+    if (!navStreak) return;
+    const streak = loadStreak();
+    navStreak.innerHTML = '';
+    if (streak.count >= 2) {
+      const label = document.createElement('span');
+      label.className = 'nav-streak-label';
+      label.textContent = 'Streak';
+      const value = document.createElement('span');
+      value.className = 'nav-streak-value';
+      value.textContent = `🔥${streak.count}`;
+      navStreak.appendChild(label);
+      navStreak.appendChild(value);
+    }
+  }
+
   function loadHistory() {
     try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
     catch { return []; }

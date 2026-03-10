@@ -132,6 +132,37 @@ nav {
   font-family: 'DM Mono', monospace;
 }
 
+.nav-streak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px 10px;
+  margin-left: 4px;
+  line-height: 1;
+  gap: 2px;
+  white-space: nowrap;
+}
+.nav-streak:empty { display: none; }
+
+.nav-streak-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+}
+
+.nav-streak-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+}
+
 /* ── MAIN LAYOUT ── */
 main {
   flex: 1;
@@ -636,6 +667,17 @@ main {
 .end-state-sub {
   font-size: 13px;
   color: var(--text-muted);
+}
+
+.streak-display {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  padding: 6px 14px;
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 20px;
 }
 
 .emoji-grid {
