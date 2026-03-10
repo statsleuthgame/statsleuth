@@ -110,8 +110,9 @@ function initGame(sport, config) {
   skipBtn.addEventListener('click', () => {
     skipBtn.classList.contains('give-up-mode') ? giveUp() : skipGuess();
   });
+  const isMobile = navigator.maxTouchPoints > 0;
   shareBtn.addEventListener('click', shareResult);
-  shareBtn.textContent = navigator.share ? 'Share Result' : 'Copy Result';
+  shareBtn.textContent = isMobile && navigator.share ? 'Share Result' : 'Copy Result';
 
   // ────────────────────────────────────────────
   function normalize(str) {
@@ -452,11 +453,11 @@ function initGame(sport, config) {
   function shareResult() {
     const text = buildShareText();
     const resetBtn = () => {
-      shareBtn.textContent = navigator.share ? 'Share Result' : 'Copy Result';
+      shareBtn.textContent = isMobile && navigator.share ? 'Share Result' : 'Copy Result';
       shareBtn.classList.remove('copied');
     };
 
-    if (navigator.share) {
+    if (isMobile && navigator.share) {
       navigator.share({ text }).catch(() => {});
     } else {
       navigator.clipboard.writeText(text).then(() => {
