@@ -2104,7 +2104,7 @@ const NBA_PLAYERS = [
 "Ryan Rollins|Milwaukee Bucks",
 // "Ryan Stack (2000-2000)",
 "Saben Lee",
-"Saddiq Bey",
+"Saddiq Bey|New Orleans Pelicans",
 // "Salah Mejri (2016-2019)",
 // "Salim Stoudamire (2006-2008)",
 // "Sam Cassell (2000-2008)",
