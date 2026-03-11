@@ -8,6 +8,8 @@ function initGame(sport, config) {
   const HISTORY_KEY = `statmask_history_${sport}`;
   const STREAK_KEY  = `statmask_streak_${sport}`;
 
+  const DEFAULT_STATE = { wrongGuesses: [], result: null, guessesUsed: 0, locked: false };
+
   // ── Load saved state ──
   let state = loadState();
 
@@ -58,39 +60,16 @@ function initGame(sport, config) {
   updateAvgDisplay(loadHistory());
   displayNavStreak();
 
-  // ── Search / autocomplete ──
-  let searchActive = false;
-  let lockedScrollY = null;
-
-  function snapScroll() {
-    if (lockedScrollY !== null) window.scrollTo(0, lockedScrollY);
-  }
-
-  function lockScroll() {
-    lockedScrollY = Math.round(window.scrollY);
-    window.addEventListener('scroll', snapScroll);
-  }
-
-  function unlockScroll() {
-    lockedScrollY = null;
-    window.removeEventListener('scroll', snapScroll);
-  }
-
-  searchInput.addEventListener('focus', () => {
-    if (searchActive) return;
-    searchActive = true;
-    let el = searchInput, absTop = 0;
-    while (el) { absTop += el.offsetTop; el = el.offsetParent; }
-    const targetY = Math.max(0, absTop - 68);
-    setTimeout(() => {
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
-      // Lock after smooth scroll settles so nothing can move it while typing
-      setTimeout(() => { if (searchActive) lockScroll(); }, 550);
-    }, 350);
-  });
-
+  // ── Event listeners ──
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   searchInput.addEventListener('input', onSearchInput);
   searchInput.addEventListener('keydown', onSearchKeydown);
+  guessBtn.addEventListener('click', submitGuess);
+  skipBtn.addEventListener('click', () => {
+    skipBtn.classList.contains('give-up-mode') ? giveUp() : skipGuess();
+  });
+  shareBtn.addEventListener('click', shareResult);
+  shareBtn.textContent = isMobile && navigator.share ? 'Share Result' : 'Copy Result';
 
   // Only dismiss when user explicitly taps outside the input area
   document.addEventListener('pointerdown', (e) => {
@@ -107,15 +86,37 @@ function initGame(sport, config) {
     if (!e.target.closest('.search-container')) closeDropdown();
   });
 
-  guessBtn.addEventListener('click', submitGuess);
-  skipBtn.addEventListener('click', () => {
-    skipBtn.classList.contains('give-up-mode') ? giveUp() : skipGuess();
-  });
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  shareBtn.addEventListener('click', shareResult);
-  shareBtn.textContent = isMobile && navigator.share ? 'Share Result' : 'Copy Result';
+  // ── Search / autocomplete ──
+  let searchActive = false;
+  let lockedScrollY = null;
 
-  // ────────────────────────────────────────────
+  searchInput.addEventListener('focus', () => {
+    if (searchActive) return;
+    searchActive = true;
+    let el = searchInput, absTop = 0;
+    while (el) { absTop += el.offsetTop; el = el.offsetParent; }
+    const targetY = Math.max(0, absTop - 68);
+    setTimeout(() => {
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+      // Lock after smooth scroll settles so nothing can move it while typing
+      setTimeout(() => { if (searchActive) lockScroll(); }, 550);
+    }, 350);
+  });
+
+  function snapScroll() {
+    if (lockedScrollY !== null) window.scrollTo(0, lockedScrollY);
+  }
+
+  function lockScroll() {
+    lockedScrollY = Math.round(window.scrollY);
+    window.addEventListener('scroll', snapScroll);
+  }
+
+  function unlockScroll() {
+    lockedScrollY = null;
+    window.removeEventListener('scroll', snapScroll);
+  }
+
   function normalize(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[.']/g, '');
   }
@@ -232,7 +233,28 @@ function initGame(sport, config) {
     dropdown.style.maxHeight = '';
   }
 
-  // ────────────────────────────────────────────
+  // ── Guess handling ────────────────────────────────────────
+
+  function lockUI() {
+    searchInput.disabled = true;
+    guessBtn.disabled = true;
+    skipBtn.disabled = true;
+    lockedBanner.classList.add('show');
+  }
+
+  function endGame(guessesUsed) {
+    state.result = 'lose';
+    state.guessesUsed = guessesUsed;
+    state.locked = true;
+    revealAllClues();
+    revealCardHeader(false);
+    card.classList.add('lose');
+    updateStreak(false);
+    displayNavStreak();
+    recordGuesses(state.guessesUsed);
+    setTimeout(() => showEndState('lose'), 700);
+  }
+
   function submitGuess() {
     if (state.locked) return;
     const guess = searchInput.value.trim();
@@ -284,30 +306,14 @@ function initGame(sport, config) {
       card.addEventListener('animationend', () => card.classList.remove('wrong-flash'), { once: true });
 
       if (state.wrongGuesses.length >= MAX_GUESSES) {
-        state.result = 'lose';
-        state.guessesUsed = MAX_GUESSES;
-        state.locked = true;
-        revealAllClues();
-        revealCardHeader(false);
-        card.classList.add('lose');
-        updateStreak(false);
-        displayNavStreak();
-        recordGuesses(state.guessesUsed);
-        setTimeout(() => showEndState('lose'), 700);
+        endGame(MAX_GUESSES);
       }
     }
 
     saveState();
-
-    if (state.locked) {
-      searchInput.disabled = true;
-      guessBtn.disabled = true;
-      skipBtn.disabled = true;
-      lockedBanner.classList.add('show');
-    }
+    if (state.locked) lockUI();
   }
 
-  // ────────────────────────────────────────────
   function skipGuess() {
     if (state.locked) return;
 
@@ -318,52 +324,25 @@ function initGame(sport, config) {
     revealNextClue();
 
     if (state.wrongGuesses.length >= MAX_GUESSES) {
-      state.result = 'lose';
-      state.guessesUsed = MAX_GUESSES;
-      state.locked = true;
-      revealAllClues();
-      revealCardHeader(false);
-      card.classList.add('lose');
-      updateStreak(false);
-      displayNavStreak();
-      recordGuesses(state.guessesUsed);
-      setTimeout(() => showEndState('lose'), 700);
-    }
-
-    saveState();
-
-    if (state.locked) {
-      searchInput.disabled = true;
-      guessBtn.disabled = true;
-      skipBtn.disabled = true;
-      lockedBanner.classList.add('show');
+      endGame(MAX_GUESSES);
     } else if (state.wrongGuesses.length >= MAX_GUESSES - 1) {
       skipBtn.textContent = 'Give Up';
       skipBtn.classList.add('give-up-mode');
     }
+
+    saveState();
+    if (state.locked) lockUI();
   }
 
-  // ────────────────────────────────────────────
   function giveUp() {
     if (state.locked) return;
-    state.result = 'lose';
-    state.guessesUsed = state.wrongGuesses.length;
-    state.locked = true;
-    revealAllClues();
-    revealCardHeader(false);
-    card.classList.add('lose');
-    updateStreak(false);
-    displayNavStreak();
-    recordGuesses(state.guessesUsed);
+    endGame(state.wrongGuesses.length);
     saveState();
-    searchInput.disabled = true;
-    guessBtn.disabled = true;
-    skipBtn.disabled = true;
-    lockedBanner.classList.add('show');
-    setTimeout(() => showEndState('lose'), 700);
+    lockUI();
   }
 
-  // ────────────────────────────────────────────
+  // ── Clue reveal ──────────────────────────────────────────
+
   function revealNextClue() {
     const idx = state.wrongGuesses.length; // offset by 1 since clue 0 is pre-shown
     if (idx < clueRows.length) {
@@ -415,6 +394,8 @@ function initGame(sport, config) {
     }
     wrongList.appendChild(tag);
   }
+
+  // ── End state & sharing ──────────────────────────────────
 
   function showEndState(result) {
     endState.classList.add('show');
@@ -486,50 +467,19 @@ function initGame(sport, config) {
     }
   }
 
-  // ────────────────────────────────────────────
-  function restoreUI() {
-    if (!state) {
-      state = { wrongGuesses: [], result: null, guessesUsed: 0, locked: false };
-      saveState();
-    }
+  // ── State persistence ────────────────────────────────────
 
-    // Always show first clue
-    clueRows[0].classList.add('revealed');
-
-    // Restore wrong guesses
-    state.wrongGuesses.forEach((name, i) => {
-      if (pips[i]) pips[i].classList.add(name === '__skip__' ? 'skip' : 'wrong');
-      addWrongGuessTag(name);
-      if (i + 1 < clueRows.length) clueRows[i + 1].classList.add('revealed');
-    });
-
-    if (!state.locked && state.wrongGuesses.length >= MAX_GUESSES - 1) {
-      skipBtn.textContent = 'Give Up';
-      skipBtn.classList.add('give-up-mode');
-    }
-
-    if (state.locked) {
-      searchInput.disabled = true;
-      guessBtn.disabled = true;
-      skipBtn.disabled = true;
-      lockedBanner.classList.add('show');
-      recordGuesses(state.guessesUsed);
-
-      if (state.result === 'win') {
-        revealAllClues();
-        revealCardHeader(true);
-        card.classList.add('win');
-        showEndState('win');
-      } else if (state.result === 'lose') {
-        revealAllClues();
-        revealCardHeader(false);
-        card.classList.add('lose');
-        showEndState('lose');
-      }
-    }
+  function getTodayKey() {
+    const d = new Date();
+    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
   }
 
-  // ────────────────────────────────────────────
+  function getYesterdayKey() {
+    const d = new Date();
+    d.setDate(d.getDate() - 1);
+    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+  }
+
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -543,25 +493,7 @@ function initGame(sport, config) {
     } catch {}
   }
 
-  function getTodayKey() {
-    const d = new Date();
-    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
-  }
-
-  function shake(el) {
-    el.style.animation = 'none';
-    el.offsetHeight;
-    el.style.animation = 'shake 0.35s ease';
-    setTimeout(() => el.style.animation = '', 400);
-  }
-
-  // ────────────────────────────────────────────
-  // ────────────────────────────────────────────
-  function getYesterdayKey() {
-    const d = new Date();
-    d.setDate(d.getDate() - 1);
-    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
-  }
+  // ── Streak & history ─────────────────────────────────────
 
   function loadStreak() {
     try { return JSON.parse(localStorage.getItem(STREAK_KEY)) || { count: 0, lastWinDate: null }; }
@@ -587,6 +519,23 @@ function initGame(sport, config) {
     return streak;
   }
 
+  function loadHistory() {
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
+    catch { return []; }
+  }
+
+  function recordGuesses(guesses) {
+    const history = loadHistory();
+    const today = getTodayKey();
+    if (history.some(h => h.date === today)) return;
+    history.push({ date: today, guesses });
+    if (history.length > 365) history.splice(0, history.length - 365);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    updateAvgDisplay(history);
+  }
+
+  // ── Nav display ──────────────────────────────────────────
+
   function displayNavStreak() {
     if (!navStreak) return;
     const streak = loadStreak();
@@ -603,21 +552,6 @@ function initGame(sport, config) {
     }
   }
 
-  function loadHistory() {
-    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
-    catch { return []; }
-  }
-
-  function recordGuesses(guesses) {
-    const history = loadHistory();
-    const today = getTodayKey();
-    if (history.some(h => h.date === today)) return;
-    history.push({ date: today, guesses });
-    if (history.length > 365) history.splice(0, history.length - 365);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
-    updateAvgDisplay(history);
-  }
-
   function updateAvgDisplay(history) {
     if (!navAvg || !history.length) return;
     const avg = (history.reduce((sum, h) => sum + h.guesses, 0) / history.length).toFixed(1);
@@ -630,6 +564,56 @@ function initGame(sport, config) {
     value.textContent = avg;
     navAvg.appendChild(label);
     navAvg.appendChild(value);
+  }
+
+  // ── Restore UI on load ───────────────────────────────────
+
+  function restoreUI() {
+    if (!state) {
+      state = { ...DEFAULT_STATE };
+      saveState();
+    }
+
+    // Always show first clue
+    clueRows[0].classList.add('revealed');
+
+    // Restore wrong guesses
+    state.wrongGuesses.forEach((name, i) => {
+      if (pips[i]) pips[i].classList.add(name === '__skip__' ? 'skip' : 'wrong');
+      addWrongGuessTag(name);
+      if (i + 1 < clueRows.length) clueRows[i + 1].classList.add('revealed');
+    });
+
+    if (!state.locked && state.wrongGuesses.length >= MAX_GUESSES - 1) {
+      skipBtn.textContent = 'Give Up';
+      skipBtn.classList.add('give-up-mode');
+    }
+
+    if (state.locked) {
+      lockUI();
+      recordGuesses(state.guessesUsed);
+
+      if (state.result === 'win') {
+        revealAllClues();
+        revealCardHeader(true);
+        card.classList.add('win');
+        showEndState('win');
+      } else if (state.result === 'lose') {
+        revealAllClues();
+        revealCardHeader(false);
+        card.classList.add('lose');
+        showEndState('lose');
+      }
+    }
+  }
+
+  // ── Utilities ────────────────────────────────────────────
+
+  function shake(el) {
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = 'shake 0.35s ease';
+    setTimeout(() => el.style.animation = '', 400);
   }
 }
 
