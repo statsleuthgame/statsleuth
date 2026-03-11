@@ -310,6 +310,7 @@ function initGame(sport, config) {
       displayNavStreak();
       recordGuesses(state.guessesUsed);
       setTimeout(() => showEndState('win'), 950);
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 400);
     } else {
       state.wrongGuesses.push(matchedName);
       updatePips();
@@ -434,6 +435,9 @@ function initGame(sport, config) {
       if (streakDisplay) streakDisplay.style.display = 'none';
     }
     emojiGrid.textContent = buildEmojiGrid(result);
+    shareBtn.classList.remove('pulse');
+    void shareBtn.offsetWidth; // force reflow to restart animation
+    shareBtn.classList.add('pulse');
     setTimeout(() => endState.focus(), 50);
   }
 
