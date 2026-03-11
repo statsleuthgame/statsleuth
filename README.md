@@ -55,7 +55,7 @@ After editing, re-upload `config.js` to GitHub and the site updates automaticall
 ## Share Format
 ```
 🔍 StatSleuth ⚾ MLB — March 5
-🟥🟥🟩
+❌❌✅
 
 Got it in 3/5!
 Play: statsleuth.com/mlb

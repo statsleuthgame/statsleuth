@@ -855,6 +855,7 @@ main {
   .nav-links { gap: 2px; }
   .nav-links a { font-size: 14px; padding: 5px 9px; letter-spacing: 0; }
   .nav-date { font-size: 10px; white-space: nowrap; }
+  .nav-streak { display: none; }
 }
 
 @media (max-width: 390px) {

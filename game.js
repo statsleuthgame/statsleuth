@@ -438,9 +438,9 @@ function initGame(sport, config) {
   }
 
   function buildEmojiGrid(result) {
-    const wrong = state.wrongGuesses.map(() => '🟥');
-    if (result === 'win') wrong.push('🟩');
-    while (wrong.length < MAX_GUESSES && result === 'lose') wrong.push('🟥');
+    const wrong = state.wrongGuesses.map(() => '❌');
+    if (result === 'win') wrong.push('✅');
+    while (wrong.length < MAX_GUESSES && result === 'lose') wrong.push('❌');
     return wrong.join('');
   }
 
