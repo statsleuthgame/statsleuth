@@ -1,0 +1,44 @@
+name: Generate Schedule
+
+on:
+  schedule:
+    # Every Sunday at 9am UTC
+    - cron: '0 9 * * 0'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Number of days to generate'
+        required: false
+        default: '7'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate schedule
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DAYS_TO_GENERATE: ${{ github.event.inputs.days || '7' }}
+        run: python generate_schedule.py
+
+      - name: Commit and push updated schedule
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schedule.json
+          git diff --cached --quiet || git commit -m "Auto-generate schedule $(date -u +%Y-%m-%d)"
+          git push
