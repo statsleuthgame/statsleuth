@@ -466,7 +466,7 @@ function initGame(sport, config) {
       lines.push(emoji);
     }
     lines.push(`#StatMask #${sportLabel}`);
-    lines.push(`statmask.com/${sport}`);
+    lines.push(`www.statmask.com/${sport}`);
     return lines.join('\n');
   }
 
