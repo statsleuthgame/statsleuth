@@ -127,7 +127,7 @@ def generate_entry(client: anthropic.Anthropic, player: str, sport: str) -> dict
     # Loop to handle pause_turn (server-side tool search iteration limit)
     while True:
         with client.messages.stream(
-            model="claude-opus-4-6",
+            model="claude-sonnet-4-6",
             max_tokens=2048,
             system=SYSTEM_PROMPT,
             tools=[{"type": "web_search_20260209", "name": "web_search"}],
@@ -161,7 +161,7 @@ def generate_entry(client: anthropic.Anthropic, player: str, sport: str) -> dict
     ]
 
     with client.messages.stream(
-        model="claude-opus-4-6",
+        model="claude-sonnet-4-6",
         max_tokens=2048,
         system=SYSTEM_PROMPT,
         tools=[{"type": "web_search_20260209", "name": "web_search"}],
@@ -212,6 +212,7 @@ def main() -> None:
                     schedule[date_key][sport] = entry
                     used[sport].add(player.lower())
                     print("✓")
+                    time.sleep(5)  # pace requests to avoid rate limits
                     break
                 except anthropic.RateLimitError as e:
                     wait = 60 * (attempt + 1)
