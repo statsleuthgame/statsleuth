@@ -655,7 +655,7 @@ const MLB_PLAYERS = [
 // "Bobby Wahl (2017-2020)",
 // "Bobby Wilson (2008-2019)",
 // "Bobby Witt (1986-2001)",
-"Bobby Witt|Kansas City Royals",
+"Bobby Witt Jr.|Kansas City Royals",
 // "Boof Bonser (2006-2010)",
 // "Boog Powell (2017-2018)",
 // "Boone Logan (2006-2018)",
