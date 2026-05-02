@@ -1250,7 +1250,7 @@
   },
   "2026-04-06": {
     "mlb": {
-      "answer": "Jose Ramirez",
+      "answer": "José Ramírez",
       "accolades": [
         "7x All-Star",
         "6x Silver Slugger",
@@ -1524,7 +1524,7 @@
   },
   "2026-04-12": {
     "mlb": {
-      "answer": "Ronald Acuna Jr.",
+      "answer": "Ronald Acuña Jr.",
       "accolades": [
         "2023 NL MVP",
         "2018 NL Rookie of the Year",
@@ -1897,7 +1897,7 @@
       "clues": [
         "In 2025, he played in all 162 games, hitting .272 with 29 home runs, 95 RBI, and a league-tying 41 doubles while winning his third career Gold Glove.",
         "Nationality: American; A rare iron man, he has suited up for every one of his team's games in four different seasons.",
-        "In 2023, he set an Atlanta single-season franchise record with 54 home runs, breaking a mark held by the franchise for more than half a century.",
+        "In 2023, he set his franchise's single-season record with 54 home runs, breaking a mark that had stood for over five decades.",
         "In Oakland, he was the power-hitting corner infielder next to Gold Glove third baseman Matt Chapman, who later signed with the Giants after stops in Toronto.",
         "He plays First Baseman for the Atlanta Braves"
       ]
@@ -2003,7 +2003,7 @@
         "In the 2024-25 season, he averaged 15.0 points, 8.0 rebounds, and 2.2 blocks per game despite missing three months with a pelvic fracture, then helped his team win the NBA title.",
         "As a rookie in 2023-24, he led all first-year players in blocks per game and finished runner-up in Rookie of the Year voting.",
         "College: Gonzaga; Draft Year: 2022",
-        "He and All-Star guard Josh Giddey helped lead Oklahoma City's young core during his rookie year before Giddey was traded to Chicago in the 2024 offseason.",
+        "He and All-Star guard Josh Giddey helped lead his team's young core during his rookie season before Giddey was traded away in 2024.",
         "He plays Center for the Oklahoma City Thunder"
       ]
     },
@@ -2032,8 +2032,8 @@
       "clues": [
         "In an injury-shortened 2025 season, he played 90 games and hit .220 with 16 doubles, 9 home runs, and 29 RBI before an oblique strain ended his year in August.",
         "Nationality: American; A switch-hitting backstop who was his team's No. 1 overall pick, he was also College World Series Most Outstanding Player at Oregon State in 2018.",
-        "In 2025, he became the first Orioles catcher to start the All-Star Game since Terry Kennedy in 1987.",
-        "He has been the primary battery mate for ace Grayson Rodriguez, who missed the entire 2025 season with a shoulder injury after making his debut with Baltimore.",
+        "In 2025, he became the first catcher from his franchise to start the All-Star Game since Terry Kennedy in 1987.",
+        "He has been the primary battery mate for ace Grayson Rodríguez, who missed the entire 2025 season after offseason elbow surgery.",
         "He plays Catcher for the Baltimore Orioles"
       ]
     },
@@ -2081,13 +2081,13 @@
       ]
     },
     "nba": {
-      "answer": "Alperen Sengun",
+      "answer": "Alperen Şengün",
       "accolades": [
         "2025 All-Star"
       ],
       "clues": [
         "In the 2024-25 season, he averaged 19.1 points, 10.3 rebounds, and 4.9 assists across 76 games while earning his first All-Star selection.",
-        "In November 2024, he became the first center in Houston franchise history to record back-to-back triple-doubles.",
+        "In November 2024, he became the first center in his franchise's history to record back-to-back triple-doubles in consecutive games.",
         "College: N/A (International); Draft Year: 2021",
         "He was originally drafted by Oklahoma City on draft night before being traded for a package that included veteran guard Armoni Brooks, who is no longer in the NBA.",
         "He plays Center for the Houston Rockets"
@@ -2162,7 +2162,7 @@
       ],
       "clues": [
         "In 2025, he led the National League in both innings pitched (207) and strikeouts (224) while posting a 3.22 ERA across 34 starts.",
-        "Nationality: American; He became the first Giants pitcher to lead the NL in strikeouts since 1944, when Hall of Famer Bill Voiselle led the Senior Circuit.",
+        "Nationality: American; He became the first pitcher from his franchise to lead the NL in strikeouts since Cliff Melton did it in 1937.",
         "In October 2021, he set a franchise postseason record by striking out 10 or more batters in his first two career playoff starts.",
         "He was a top-of-the-rotation staple alongside veteran catcher Buster Posey, who retired after the 2021 season to eventually become his team's president of baseball operations.",
         "He plays Starting Pitcher for the San Francisco Giants"
@@ -2234,7 +2234,7 @@
       ],
       "clues": [
         "In 2025, he caught 48 passes for 422 yards and 5 touchdowns across all 17 games before his team reached the AFC playoffs.",
-        "In 2021, he set Baltimore franchise records for receptions (107) and receiving yards (1,361) by a tight end in a single season.",
+        "In 2021, he set his franchise's records for receptions (107) and receiving yards (1,361) in a single season by a tight end.",
         "College: Oklahoma; Draft Year: 2018",
         "He has long been the primary pass-catching target of Hall of Fame-caliber quarterback Lamar Jackson, but earlier in his career he caught passes from veteran Joe Flacco, who has since made stops in Cleveland and Indianapolis.",
         "He plays Tight End for the Baltimore Ravens"
@@ -2406,18 +2406,16 @@
       ]
     },
     "nfl": {
-      "answer": "Myles Garrett",
+      "answer": "Brian Thomas Jr.",
       "accolades": [
-        "2x Defensive Player of the Year",
-        "7x Pro Bowl",
-        "5x First-Team All-Pro"
+        "2024 1st Round Pick"
       ],
       "clues": [
-        "In 2025, he recorded an NFL single-season record 23 sacks along with 33 tackles for loss, earning unanimous Defensive Player of the Year honors.",
-        "His 23-sack 2025 broke a record that had stood since 2001 and had been co-held by Michael Strahan and T.J. Watt at 22.5.",
-        "College: Texas A&M; Draft Year: 2017",
-        "He anchored a defensive line for years alongside three-time Pro Bowler Olivier Vernon, whose NFL career ended after the 2021 season.",
-        "He plays Defensive End for the Cleveland Browns"
+        "In the 2025 season, he caught 48 passes for 707 yards and 2 touchdowns across 14 games — a steep drop from his record-breaking rookie year.",
+        "As a rookie in 2024, he hauled in 87 receptions for 1,282 yards and 10 touchdowns, breaking franchise rookie receiving records.",
+        "College: LSU; Draft Year: 2024",
+        "He shared an LSU receiver room with Malik Nabers, who became the New York Giants' top target after going one slot before him in the 2024 draft.",
+        "He plays Wide Receiver for the Jacksonville Jaguars"
       ]
     }
   },
@@ -2432,7 +2430,7 @@
       "clues": [
         "In an injury-shortened 2025 season, he hit .260 with 16 home runs and 54 RBI before his year ended early.",
         "Nationality: American; He was originally drafted as a high school pitcher before converting to third base in the minor leagues.",
-        "In 2021, he finished seventh in NL MVP voting and capped the year by winning the World Series with Atlanta.",
+        "In 2021, he finished seventh in NL MVP voting and capped the year by winning the World Series, hitting two home runs in the Fall Classic.",
         "He shared the left side of the infield for years with veteran shortstop Dansby Swanson, who signed with the Cubs in free agency after 2022.",
         "He plays Third Baseman for the Atlanta Braves"
       ]
@@ -2453,18 +2451,16 @@
       ]
     },
     "nfl": {
-      "answer": "Micah Parsons",
+      "answer": "Justin Fields",
       "accolades": [
-        "5x Pro Bowl",
-        "2021 Defensive Rookie of the Year",
-        "3x First-Team All-Pro"
+        "2021 1st Round Pick"
       ],
       "clues": [
-        "In 2025, after an August trade, he recorded 12.5 sacks across 14 games before a torn ACL in Week 15 ended his season.",
-        "In August 2025, he signed a four-year, $188 million contract that made him the highest-paid non-quarterback in NFL history.",
-        "College: Penn State; Draft Year: 2021",
-        "For four seasons in Dallas, he wreaked havoc alongside defensive tackle Kenny Clark's former rival Dorance Armstrong, who signed with Washington in 2024.",
-        "He plays Defensive End for the Green Bay Packers"
+        "In 2025 he started 9 games for the Jets, throwing for 1,259 yards with 7 touchdowns and just 1 interception while adding 383 rushing yards and 4 rushing touchdowns.",
+        "In 2022, he ran for 1,143 yards, the second-most rushing yards by a quarterback in a single season in NFL history.",
+        "College: Ohio State; Draft Year: 2021",
+        "During his Bears tenure he handed the ball to running back David Montgomery, who has since starred for Detroit.",
+        "He plays Quarterback for the Kansas City Chiefs"
       ]
     }
   },
@@ -2498,17 +2494,16 @@
       ]
     },
     "nfl": {
-      "answer": "Maxx Crosby",
+      "answer": "Aaron Jones",
       "accolades": [
-        "5x Pro Bowl",
-        "2x First-Team All-Pro"
+        "2x Pro Bowl"
       ],
       "clues": [
-        "In 2025, he recorded 10 sacks, 45 solo tackles, and an interception across 15 games before landing on injured reserve for the final two weeks.",
-        "In 2022, he led the NFL with 22 tackles for loss while becoming just the fifth player in his franchise's history to reach a double-digit sack season.",
-        "College: Eastern Michigan; Draft Year: 2019",
-        "He spent years on the edge alongside fellow defensive end Chandler Jones, who last played for his current team in 2023 before his release.",
-        "He plays Defensive End for the Las Vegas Raiders"
+        "In the 2025 season he rushed for 548 yards and 2 touchdowns on 132 carries while adding 28 receptions and 199 receiving yards.",
+        "He is the all-time leading rusher in Green Bay Packers history, finishing his time there with over 5,400 rushing yards.",
+        "College: UTEP; Draft Year: 2017",
+        "He spent his first six seasons in the same backfield as quarterback Aaron Rodgers, who has since moved on to Pittsburgh.",
+        "He plays Running Back for the Minnesota Vikings"
       ]
     }
   },
@@ -2559,7 +2554,7 @@
   },
   "2026-05-05": {
     "mlb": {
-      "answer": "Michael Harris II",
+      "answer": "Michael Harris",
       "accolades": [
         "2022 NL Rookie of the Year",
         "Gold Glove"
@@ -2665,7 +2660,7 @@
         "2024-25 All-Defensive Second Team"
       ],
       "clues": [
-        "In the 2024-25 season, he started all 82 games — as he has for every season of his NBA career — averaging 17.6 points while playing more minutes than any other New York player.",
+        "In the 2024-25 season, he started all 82 games — as he has for every season of his NBA career — averaging 17.6 points, 3.2 rebounds, and 3.7 assists in his first year with his new franchise.",
         "Through his first seven NBA seasons, he became the first player since Dolph Schayes in the 1950s to play in every possible regular-season game.",
         "College: Villanova; Draft Year: 2018",
         "He was originally drafted by Philadelphia before being traded on draft night to Phoenix, where he later won a Finals berth in 2021 alongside Chris Paul, who is now with Sacramento.",
@@ -2673,18 +2668,16 @@
       ]
     },
     "nfl": {
-      "answer": "Patrick Surtain II",
+      "answer": "Terry McLaurin",
       "accolades": [
-        "2024 Defensive Player of the Year",
-        "4x Pro Bowl",
-        "2x First-Team All-Pro"
+        "2024 Pro Bowl"
       ],
       "clues": [
-        "In 2025, he recorded 47 total tackles, 12 passes defended, and 1 interception across 14 games while earning his fourth consecutive Pro Bowl nod.",
-        "In 2024, he became just the second cornerback in the last 25 years to win the AP NFL Defensive Player of the Year award.",
-        "College: Alabama; Draft Year: 2021",
-        "His father was a three-time Pro Bowl cornerback who finished his NFL career with Kansas City in 2008, and in his own rookie year he played alongside veteran corner Kyle Fuller before Fuller's release.",
-        "He plays Cornerback for the Denver Broncos"
+        "In an injury-marred 2025 season he caught 38 passes for 582 yards and 3 touchdowns across 10 games.",
+        "In 2024 he set a career high with 13 receiving touchdowns, the most in a single season by any wide receiver in his franchise's history.",
+        "College: Ohio State; Draft Year: 2019",
+        "He spent multiple seasons catching passes from former first-overall pick Carson Wentz, who has since moved on to other teams.",
+        "He plays Wide Receiver for the Washington Commanders"
       ]
     }
   },
@@ -2728,6 +2721,1000 @@
         "College: Georgia; Draft Year: 2024",
         "He entered the league catching passes in the same offense as veteran receiver Joshua Palmer, who left in free agency for Buffalo after the 2024 season.",
         "He plays Wide Receiver for the Los Angeles Chargers"
+      ]
+    }
+  },
+  "2026-05-09": {
+    "mlb": {
+      "answer": "Paul Skenes",
+      "accolades": [
+        "2025 NL Cy Young Award",
+        "2024 NL Rookie of the Year",
+        "2x All-Star"
+      ],
+      "clues": [
+        "In 2025 he went 10-10 with a 1.97 ERA and 216 strikeouts across 187.2 innings, leading all of MLB in ERA on his way to a unanimous Cy Young Award.",
+        "Nationality: American; In high school he was a two-way player and only became a full-time pitcher at LSU, where he later won the 2023 College World Series MVP.",
+        "He became the first player since Dwight Gooden in 1984-85 to win Rookie of the Year and the Cy Young Award in consecutive seasons.",
+        "He emerged from the same rotation that briefly featured veteran Mitch Keller's old college teammate Martín Pérez, who has since moved on.",
+        "He plays Starting Pitcher for the Pittsburgh Pirates"
+      ]
+    },
+    "nba": {
+      "answer": "Aaron Gordon",
+      "accolades": [
+        "2023 NBA Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 16.2 points and 5.8 rebounds across 51 games while posting a career-high 65.0 true shooting percentage.",
+        "His memorable 360-degree jump-over-the-mascot dunk in the 2020 Slam Dunk Contest is widely considered one of the most controversial scoring decisions in event history.",
+        "College: Arizona; Draft Year: 2014",
+        "He spent his first six-plus seasons in Orlando alongside center Nikola Vučević, who has since suited up in Chicago and Boston.",
+        "He plays Forward for the Denver Nuggets"
+      ]
+    },
+    "nfl": {
+      "answer": "Aaron Rodgers",
+      "accolades": [
+        "4x NFL MVP",
+        "Super Bowl XLV Champion"
+      ],
+      "clues": [
+        "In 2025 he threw for 3,322 yards with 24 touchdowns and only 7 interceptions across 11 games while leading his team to the AFC North title.",
+        "He is the only quarterback in NFL history to throw four touchdowns in his first four passes after returning from a major injury.",
+        "College: California; Draft Year: 2005",
+        "He spent over a decade throwing to wide receiver Davante Adams, who has since played for the Raiders, Jets, and Rams.",
+        "He plays Quarterback for the Pittsburgh Steelers"
+      ]
+    }
+  },
+  "2026-05-10": {
+    "mlb": {
+      "answer": "Cody Bellinger",
+      "accolades": [
+        "2017 NL Rookie of the Year",
+        "2019 NL MVP",
+        "2x All-Star",
+        "2x Gold Glove"
+      ],
+      "clues": [
+        "In his first full Bronx season in 2025 he hit .272 with 29 home runs and 98 RBI across 152 games before re-signing for $162.5 million in January 2026.",
+        "Nationality: American; He grew up the son of MLB infielder Clay, who played seven seasons in the majors and won a 1999 World Series ring in the Bronx.",
+        "His 39-home-run, 97-RBI rookie season in 2017 set a then-NL record for most home runs by a rookie, breaking Wally Berger's mark from 1930.",
+        "He won the 2020 World Series in Los Angeles alongside outfielder Mookie Betts, who remains the Dodgers' star right fielder.",
+        "He plays Outfielder for the New York Yankees"
+      ]
+    },
+    "nba": {
+      "answer": "Al Horford",
+      "accolades": [
+        "5x NBA All-Star",
+        "2024 NBA Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season, at age 38, he averaged 9.7 points, 5.1 rebounds, and 2.4 assists while helping his team make a deep playoff run.",
+        "He became the first Dominican-born player to win an NBA championship when he captured the 2024 title with the Boston Celtics.",
+        "College: Florida; Draft Year: 2007",
+        "He won that 2024 title playing alongside All-Star wing Jaylen Brown, who remains in Boston while he signed elsewhere.",
+        "He plays Forward-Center for the Golden State Warriors"
+      ]
+    },
+    "nfl": {
+      "answer": "Baker Mayfield",
+      "accolades": [
+        "2023 Pro Bowl",
+        "2018 1st Overall Pick"
+      ],
+      "clues": [
+        "In the 2025 regular season he started all 17 games, throwing for 3,693 yards with 26 touchdowns and 11 interceptions.",
+        "In 2017 he became the first walk-on quarterback ever to win the Heisman Trophy.",
+        "College: Oklahoma; Draft Year: 2018",
+        "He spent his first four seasons throwing to wide receiver Odell Beckham Jr., with whom he won a memorable 2020 playoff game in Pittsburgh.",
+        "He plays Quarterback for the Tampa Bay Buccaneers"
+      ]
+    }
+  },
+  "2026-05-11": {
+    "mlb": {
+      "answer": "Aaron Nola",
+      "accolades": [
+        "2x All-Star",
+        "Roy Halladay Award"
+      ],
+      "clues": [
+        "In an injury-shortened 2025 season he made just 17 starts before going down in late June with a rib injury.",
+        "Nationality: American; In June 2021 he tied a record set by Tom Seaver in 1970 by striking out 10 consecutive batters in a single game.",
+        "He is the fastest pitcher in his franchise's history to reach 1,000 career strikeouts, getting there in just 913 innings.",
+        "He came up alongside catcher Cameron Rupp, who has since departed the organization.",
+        "He plays Starting Pitcher for the Philadelphia Phillies"
+      ]
+    },
+    "nba": {
+      "answer": "Ben Simmons",
+      "accolades": [
+        "3x NBA All-Star",
+        "2018 Rookie of the Year"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 5.0 points, 4.7 rebounds, and 5.6 assists in a reduced playmaking role across 51 games.",
+        "He is the only player in NBA history to be selected number-one overall, win Rookie of the Year, and make multiple All-Defensive teams without ever attempting a three-pointer in his first four seasons.",
+        "College: LSU; Draft Year: 2016",
+        "He played his first four NBA seasons in Philadelphia alongside center Joel Embiid, who remains a 76ers cornerstone.",
+        "He plays Guard-Forward for the LA Clippers"
+      ]
+    },
+    "nfl": {
+      "answer": "Calvin Ridley",
+      "accolades": [
+        "2020 Pro Bowl"
+      ],
+      "clues": [
+        "In an injury-shortened 2025 season he caught only 17 passes for 303 yards across 7 games before a fractured fibula ended his year.",
+        "In 2020, his third NFL season, he posted 1,374 receiving yards and 9 touchdowns while becoming a Pro Bowl selection.",
+        "College: Alabama; Draft Year: 2018",
+        "During his early Atlanta years he caught passes from veteran wide receiver Julio Jones, who has since departed the Falcons organization.",
+        "He plays Wide Receiver for the Tennessee Titans"
+      ]
+    }
+  },
+  "2026-05-12": {
+    "mlb": {
+      "answer": "Roki Sasaki",
+      "accolades": [
+        "2025 World Series Champion"
+      ],
+      "clues": [
+        "After joining MLB ahead of the 2025 season, he posted a 4.46 regular-season ERA before becoming a postseason weapon with a 0.84 ERA en route to a championship.",
+        "Nationality: Japanese; In April 2022, at age 20, he threw a perfect game for the Chiba Lotte Marines, striking out 19 batters in nine innings.",
+        "His perfect game made him the youngest pitcher in Nippon Professional Baseball history to throw one and the first pitcher in any top-level pro league to strike out 13 in a row in a game.",
+        "He shares a rotation with two-way superstar Shohei Ohtani, who pitched alongside him for Japan in the 2023 World Baseball Classic.",
+        "He plays Starting Pitcher for the Los Angeles Dodgers"
+      ]
+    },
+    "nba": {
+      "answer": "Bogdan Bogdanović",
+      "accolades": [
+        "2022 6th Man of the Year Runner-Up"
+      ],
+      "clues": [
+        "Across the 2024-25 season he averaged 8.0 points, 2.9 rebounds, and 2.7 assists, splitting the year between two teams after a midseason trade.",
+        "Nationality: Serbian; He won an Olympic silver medal at the 2016 Rio Games before NBA stardom and added another silver medal at the 2024 Paris Games.",
+        "College: N/A (International); Draft Year: 2014",
+        "He spent four-plus seasons in Atlanta alongside All-Star guard Trae Young, who remains with the Hawks.",
+        "He plays Guard for the LA Clippers"
+      ]
+    },
+    "nfl": {
+      "answer": "Rashee Rice",
+      "accolades": [
+        "Super Bowl LVIII Champion"
+      ],
+      "clues": [
+        "In a 2025 season cut short by a Week 15 concussion, he caught 53 passes for 571 yards and 5 touchdowns across 8 games.",
+        "As a rookie in 2023 he set a franchise rookie record with 938 receiving yards and helped his team capture a Super Bowl title in February 2024.",
+        "College: SMU; Draft Year: 2023",
+        "He won that Super Bowl playing alongside running back Clyde Edwards-Helaire, the team's 2020 first-round pick who later departed.",
+        "He plays Wide Receiver for the Kansas City Chiefs"
+      ]
+    }
+  },
+  "2026-05-13": {
+    "mlb": {
+      "answer": "Max Fried",
+      "accolades": [
+        "2024 All-Star",
+        "4x Gold Glove"
+      ],
+      "clues": [
+        "In his first season with a new club in 2025, he went 19-5 with a 2.86 ERA across 32 starts and won his fourth career Gold Glove.",
+        "Nationality: American; He grew up in Santa Monica, California, and was teammates with future Dodgers ace Jack Flaherty at Harvard-Westlake High School.",
+        "In 2021 he won three consecutive starts in a single World Series series, becoming the first pitcher to do so since 2002 in helping his team win it all.",
+        "He won the 2021 World Series with Atlanta alongside outfielder Jorge Soler, who was the World Series MVP that year and has since played for several teams.",
+        "He plays Starting Pitcher for the New York Yankees"
+      ]
+    },
+    "nba": {
+      "answer": "Brook Lopez",
+      "accolades": [
+        "NBA Champion",
+        "2x NBA All-Defensive Second Team"
+      ],
+      "clues": [
+        "In the 2024-25 season he started all 80 games he played, averaging 13.0 points, 5.0 rebounds, and 1.9 blocks while finishing second in the league in total blocks.",
+        "He is the only player in NBA history to record 1,500 career blocks and make 1,000 career three-pointers.",
+        "College: Stanford; Draft Year: 2008",
+        "He won his lone championship in 2021 alongside two-time MVP Giannis Antetokounmpo, who remains in Milwaukee.",
+        "He plays Center for the Los Angeles Clippers"
+      ]
+    },
+    "nfl": {
+      "answer": "Hunter Henry",
+      "accolades": [
+        "2024 Pro Bowl"
+      ],
+      "clues": [
+        "In the 2025 season he set a career high with 768 receiving yards on 60 catches with 7 touchdowns across all 17 games.",
+        "Earlier in his career he won the John Mackey Award as the nation's top college tight end and entered the NFL with the Chargers as a second-round pick.",
+        "College: Arkansas; Draft Year: 2016",
+        "He spent his first five seasons catching passes from quarterback Philip Rivers in Los Angeles before Rivers' first retirement.",
+        "He plays Tight End for the New England Patriots"
+      ]
+    }
+  },
+  "2026-05-14": {
+    "mlb": {
+      "answer": "Marcell Ozuna",
+      "accolades": [
+        "3x All-Star",
+        "2024 NL Silver Slugger",
+        "Gold Glove"
+      ],
+      "clues": [
+        "In 2025 he hit .232 with 21 home runs and 68 RBI for Atlanta before signing a one-year deal with a new club in February 2026.",
+        "Nationality: Dominican; In 2020 he led the National League in home runs and RBI in the shortened 60-game season, narrowly missing the Triple Crown.",
+        "He hit 39 home runs in 2024 with a .906 OPS, finishing fourth in the NL MVP voting.",
+        "He spent his first five MLB seasons in Miami alongside outfielder Christian Yelich, who has since starred for the Milwaukee Brewers.",
+        "He plays Designated Hitter for the Pittsburgh Pirates"
+      ]
+    },
+    "nba": {
+      "answer": "CJ McCollum",
+      "accolades": [
+        "2016 Most Improved Player"
+      ],
+      "clues": [
+        "On January 3, 2025, he scored 50 points against the Washington Wizards before a foot injury cut short his season at the end of March.",
+        "He is one of only six players in NBA history to win Most Improved Player and average at least 20 points per game in each of the next eight seasons.",
+        "College: Lehigh; Draft Year: 2013",
+        "He spent more than five seasons in the Portland backcourt alongside guard Damian Lillard, who has since played for both Milwaukee and Portland again.",
+        "He plays Guard for the New Orleans Pelicans"
+      ]
+    },
+    "nfl": {
+      "answer": "Jaylen Waddle",
+      "accolades": [
+        "2022 Pro Bowl",
+        "2021 NFL Rookie Receptions Record"
+      ],
+      "clues": [
+        "In 2025 he was traded to a new franchise during the 2026 offseason, joining a high-altitude AFC West team in mid-March.",
+        "As a rookie in 2021 he set the NFL record for most receptions by a rookie with 104, breaking the previous mark held by Anquan Boldin.",
+        "College: Alabama; Draft Year: 2021",
+        "He was Tua Tagovailoa's primary deep threat in Miami for several seasons, with Tagovailoa remaining the Dolphins' starting quarterback.",
+        "He plays Wide Receiver for the Denver Broncos"
+      ]
+    }
+  },
+  "2026-05-15": {
+    "mlb": {
+      "answer": "Xander Bogaerts",
+      "accolades": [
+        "4x All-Star",
+        "5x Silver Slugger",
+        "2x World Series Champion"
+      ],
+      "clues": [
+        "In a partial 2025 campaign he hit .278 with 4 home runs and 16 RBI before injuries shortened his year.",
+        "Nationality: Aruban; He is one of only a handful of MLB players in history to record at least one career home run in five different countries.",
+        "He won World Series titles in both 2013 and 2018 in Boston, becoming the youngest Red Sox player to be on multiple championship rosters since Tris Speaker in the 1910s.",
+        "He came up through Boston's infield alongside second baseman Dustin Pedroia, who has since retired from baseball.",
+        "He plays Shortstop for the San Diego Padres"
+      ]
+    },
+    "nba": {
+      "answer": "Evan Mobley",
+      "accolades": [
+        "2025 Defensive Player of the Year",
+        "2025 NBA All-Star",
+        "2025 All-NBA Second Team"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 18.5 points, 9.3 rebounds, and 1.6 blocks while becoming the first Cavalier ever to win Defensive Player of the Year.",
+        "He was a unanimous selection to the 2021-22 NBA All-Rookie First Team after finishing as the runner-up for Rookie of the Year.",
+        "College: USC; Draft Year: 2021",
+        "He has played his entire NBA career alongside center Jarrett Allen, with whom he formed an elite defensive frontcourt.",
+        "He plays Forward-Center for the Cleveland Cavaliers"
+      ]
+    },
+    "nfl": {
+      "answer": "Tyler Lockett",
+      "accolades": [
+        "2020 Pro Bowl",
+        "2x All-Pro Special Teams"
+      ],
+      "clues": [
+        "After joining a new AFC West team via midseason trade, he finished 2025 with 32 receptions for 291 yards and a touchdown across 17 games.",
+        "He is one of only seven players in NFL history to record at least eight career punt-return or kick-return touchdowns to go with multiple thousand-yard receiving seasons.",
+        "College: Kansas State; Draft Year: 2015",
+        "He spent ten seasons catching passes from quarterback Russell Wilson, who has since departed Seattle and bounced through several teams.",
+        "He plays Wide Receiver for the Las Vegas Raiders"
+      ]
+    }
+  },
+  "2026-05-16": {
+    "mlb": {
+      "answer": "Byron Buxton",
+      "accolades": [
+        "2025 AL Silver Slugger",
+        "2x All-Star",
+        "Platinum Glove"
+      ],
+      "clues": [
+        "In 2025 he hit .264 with 35 home runs and 83 RBI across 126 games, capturing his first career Silver Slugger Award.",
+        "Nationality: American; He was once clocked at 30.0 feet per second by MLB's Statcast, making him one of only a few players ever measured at the elite '8.0' speed tier.",
+        "He is the only player in MLB history to win a Platinum Glove, a Wilson Defensive Player of the Year award, and a 30-home-run season as the same player.",
+        "He played alongside catcher Mitch Garver for several seasons in the AL Central before Garver departed via free agency.",
+        "He plays Outfielder for the Minnesota Twins"
+      ]
+    },
+    "nba": {
+      "answer": "Fred VanVleet",
+      "accolades": [
+        "2x NBA All-Star",
+        "2019 NBA Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 14.9 points, 4.4 rebounds, and 6.0 assists across 60 games while battling a one-month ankle absence.",
+        "He went undrafted in 2016 and later became one of only a handful of undrafted players to win an NBA championship as a major contributor.",
+        "College: Wichita State; Draft Year: undrafted (2016)",
+        "He won that 2019 title in Toronto playing alongside Kawhi Leonard, who remains in Los Angeles with the Clippers.",
+        "He plays Guard for the Houston Rockets"
+      ]
+    },
+    "nfl": {
+      "answer": "Michael Pittman",
+      "accolades": [
+        "2023 Pro Bowl"
+      ],
+      "clues": [
+        "In 2025 he caught 80 passes for 784 yards and 7 touchdowns across all 17 games before being traded to a new AFC North team in March 2026.",
+        "He posted three consecutive 1,000-yard receiving seasons from 2021-23, becoming just the fifth Indianapolis player ever to accomplish that feat.",
+        "College: USC; Draft Year: 2020",
+        "He spent his first six seasons in Indianapolis catching passes from quarterback Philip Rivers in his rookie year, before Rivers retired after that 2020 season.",
+        "He plays Wide Receiver for the Pittsburgh Steelers"
+      ]
+    }
+  },
+  "2026-05-17": {
+    "mlb": {
+      "answer": "Brandon Lowe",
+      "accolades": [
+        "2x All-Star",
+        "2020 AL Silver Slugger"
+      ],
+      "clues": [
+        "In 2025 he hit 31 home runs and drove in 83 runs across 134 games before joining a new National League Central team in the offseason.",
+        "Nationality: American; He hit two home runs in Game 2 of the 2020 World Series against the Dodgers, becoming the first second baseman to homer twice in a Fall Classic game in over 60 years.",
+        "He is the fastest primary second baseman in MLB history to reach 100 career home runs, doing so in just 477 games.",
+        "He came up through the Tampa Bay infield alongside shortstop Willy Adames, who has since signed with the San Francisco Giants.",
+        "He plays Second Baseman for the Pittsburgh Pirates"
+      ]
+    },
+    "nba": {
+      "answer": "Jalen Green",
+      "accolades": [
+        "2021 2nd Overall Pick"
+      ],
+      "clues": [
+        "He averaged 19.0 points, 4.7 rebounds, and 2.7 assists in 2024-25 before being traded across conferences in the offseason.",
+        "He is the highest-drafted player ever to come out of the G-League Ignite developmental program, going second overall in 2021.",
+        "College: N/A (G League Ignite); Draft Year: 2021",
+        "He spent his first four NBA seasons in Houston alongside center Alperen Şengün, who remains with the Rockets.",
+        "He plays Guard for the Phoenix Suns"
+      ]
+    },
+    "nfl": {
+      "answer": "Xavier Worthy",
+      "accolades": [
+        "Super Bowl LVIII Champion"
+      ],
+      "clues": [
+        "In the 2025 season he caught 42 passes for 532 yards and a touchdown in 14 games for the reigning AFC champions.",
+        "At the 2024 NFL Combine he ran a 4.21-second 40-yard dash, the fastest official time in the event's history.",
+        "College: Texas; Draft Year: 2024",
+        "He plays alongside tight end Travis Kelce, who has been Patrick Mahomes' top target throughout his Hall of Fame-bound career.",
+        "He plays Wide Receiver for the Kansas City Chiefs"
+      ]
+    }
+  },
+  "2026-05-18": {
+    "mlb": {
+      "answer": "Dylan Cease",
+      "accolades": [
+        "2022 AL Cy Young Runner-Up",
+        "2x All-Star"
+      ],
+      "clues": [
+        "In 2025 he went 8-12 with 215 strikeouts across 168 innings before signing the largest pitcher contract in his new franchise's history.",
+        "Nationality: American; In 2022 he held opposing hitters to a sub-.150 batting average over a stretch of 14 starts, the longest such streak by any AL pitcher in two decades.",
+        "On July 25, 2024, he threw a no-hitter against the Washington Nationals, becoming the first Padres pitcher to throw one since Joe Musgrove in 2021.",
+        "He came over to San Diego in a 2024 trade with the Chicago White Sox, the same organization where he and shortstop Tim Anderson once played together.",
+        "He plays Starting Pitcher for the Toronto Blue Jays"
+      ]
+    },
+    "nba": {
+      "answer": "Jonathan Kuminga",
+      "accolades": [
+        "2022 NBA Champion"
+      ],
+      "clues": [
+        "In 2024-25 he averaged 15.3 points and 4.6 rebounds across 47 games before being traded to a new Eastern Conference team in February 2026.",
+        "Nationality: Congolese; He became the youngest player ever to start an NBA Finals game when he started Game 4 of the 2022 NBA Finals at age 19.",
+        "College: N/A (International); Draft Year: 2021",
+        "He won that 2022 championship in Golden State alongside guard Stephen Curry, who remains the face of the Warriors franchise.",
+        "He plays Forward for the Atlanta Hawks"
+      ]
+    },
+    "nfl": {
+      "answer": "Keenan Allen",
+      "accolades": [
+        "6x Pro Bowl",
+        "2017 Comeback Player of the Year"
+      ],
+      "clues": [
+        "In 2025 he caught 81 passes for 777 yards and 4 touchdowns while reaching a major career milestone in Week 5.",
+        "On October 5, 2025, he became the fastest player in NFL history to reach 1,000 career receptions, getting there in just 159 games.",
+        "College: California; Draft Year: 2013",
+        "He spent more than a decade catching passes from quarterback Philip Rivers, who has since retired and made a brief return.",
+        "He plays Wide Receiver for the Los Angeles Chargers"
+      ]
+    }
+  },
+  "2026-05-19": {
+    "mlb": {
+      "answer": "Jeremy Peña",
+      "accolades": [
+        "2022 World Series MVP",
+        "2022 ALCS MVP",
+        "2x Gold Glove"
+      ],
+      "clues": [
+        "In 2025 he hit a career-best .304 with 17 home runs, 62 RBI, and 20 stolen bases across 125 games.",
+        "Nationality: Dominican-American; He is the son of former MLB infielder Geronimo, who played eight big-league seasons in the 1990s.",
+        "In 2022 he became the first rookie position player ever to win both a League Championship Series MVP and a World Series MVP in the same postseason.",
+        "He won that 2022 title alongside All-Star second baseman José Altuve, who remains the team's veteran leader.",
+        "He plays Shortstop for the Houston Astros"
+      ]
+    },
+    "nba": {
+      "answer": "Jordan Poole",
+      "accolades": [
+        "2022 NBA Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 20.7 points, 4.8 assists, and 3.1 rebounds in a heavy offensive role.",
+        "He hit a memorable buzzer-beater from beyond half court at the end of the third quarter of Game 2 of the 2022 NBA Finals.",
+        "College: Michigan; Draft Year: 2019",
+        "He won that 2022 championship in Golden State alongside Klay Thompson, who has since signed with the Dallas Mavericks.",
+        "He plays Guard for the Washington Wizards"
+      ]
+    },
+    "nfl": {
+      "answer": "Deebo Samuel Sr.",
+      "accolades": [
+        "2021 First-Team All-Pro",
+        "2022 Pro Bowl"
+      ],
+      "clues": [
+        "In 2025 he posted 72 receptions for 727 yards and 5 receiving touchdowns while also rushing for a score across 16 games.",
+        "In 2021 he became the first wide receiver in NFL history to lead the league in yards per reception while also rushing for at least eight touchdowns.",
+        "College: South Carolina; Draft Year: 2019",
+        "He spent his first six NFL seasons in San Francisco catching passes from Brock Purdy, who remains the 49ers' starting quarterback.",
+        "He plays Wide Receiver for the Washington Commanders"
+      ]
+    }
+  },
+  "2026-05-20": {
+    "mlb": {
+      "answer": "Luis Robert Jr.",
+      "accolades": [
+        "2023 All-Star",
+        "2020 AL Gold Glove"
+      ],
+      "clues": [
+        "In 2025 he hit .223 with 14 home runs and 53 RBI before being traded across leagues that winter.",
+        "Nationality: Cuban; He defected from Cuba in 2017 and signed a then-record international amateur free-agent bonus of $26 million with his original MLB club.",
+        "In 2023 he became the first White Sox player to record a 30-homer, 20-steal season since José Valentín in 2001.",
+        "He spent multiple seasons in Chicago's outfield alongside slugger Eloy Jiménez, who has since played for other organizations.",
+        "He plays Outfielder for the New York Mets"
+      ]
+    },
+    "nba": {
+      "answer": "Keegan Murray",
+      "accolades": [
+        "2022 NBA All-Rookie First Team"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 12.2 points and 7.8 rebounds while shooting 34.3% from beyond the arc.",
+        "As a rookie in 2022-23 he set the NBA single-season rookie record for three-pointers made with 206, breaking Donovan Mitchell's previous mark.",
+        "College: Iowa; Draft Year: 2022",
+        "He has played his entire NBA career alongside center Domantas Sabonis, who remains the franchise cornerstone.",
+        "He plays Forward for the Sacramento Kings"
+      ]
+    },
+    "nfl": {
+      "answer": "Courtland Sutton",
+      "accolades": [
+        "2019 Pro Bowl"
+      ],
+      "clues": [
+        "In 2025 he caught 74 passes for 1,017 yards and 7 touchdowns across all 17 games, leading his team in receiving categories.",
+        "He recorded his first 1,000-yard receiving season in just his second NFL year despite being targeted by three different starting quarterbacks that season.",
+        "College: SMU; Draft Year: 2018",
+        "He spent multiple seasons catching passes from quarterback Russell Wilson before Wilson moved on to other teams and was eventually released.",
+        "He plays Wide Receiver for the Denver Broncos"
+      ]
+    }
+  },
+  "2026-05-21": {
+    "mlb": {
+      "answer": "J. T. Realmuto",
+      "accolades": [
+        "3x All-Star",
+        "Gold Glove",
+        "Silver Slugger"
+      ],
+      "clues": [
+        "In 2025 he posted a .257 batting average with 12 home runs and 52 RBI across 134 games while serving as his team's primary backstop.",
+        "Nationality: American; He is widely considered one of the fastest catchers of the modern era, twice ranking in the top 30 of MLB's Sprint Speed leaderboard at his position.",
+        "He is the only player in MLB history to win a Gold Glove, Silver Slugger, and All-Star nod at catcher in the same season as well as in three separate seasons.",
+        "He spent his first six MLB seasons in Miami catching the pitches of left-hander Adam Conley, who has since departed the Marlins.",
+        "He plays Catcher for the Philadelphia Phillies"
+      ]
+    },
+    "nba": {
+      "answer": "Kyle Kuzma",
+      "accolades": [
+        "2020 NBA Champion"
+      ],
+      "clues": [
+        "In 2024-25 he averaged 17.0 points and 7.0 rebounds with the Wizards before being traded to a new Eastern Conference team at the 2026 deadline.",
+        "He is one of only five players in NBA history to be acquired in a deal involving Russell Westbrook and immediately average over 17 points per game with their new team.",
+        "College: Utah; Draft Year: 2017",
+        "He won his lone championship in the 2020 Disney bubble alongside LeBron James, who remains with the Lakers.",
+        "He plays Forward for the Milwaukee Bucks"
+      ]
+    },
+    "nfl": {
+      "answer": "Evan Engram",
+      "accolades": [
+        "2022 Pro Bowl"
+      ],
+      "clues": [
+        "In 2025 he caught 50 passes for 461 yards and a touchdown across 16 games for his new AFC West team.",
+        "In 2022 he became just the third tight end in NFL history to record at least 70 receptions in his first season after switching teams as a free agent.",
+        "College: Ole Miss; Draft Year: 2017",
+        "He spent his first five NFL seasons in New York catching passes from Eli Manning, who retired after the 2019 season.",
+        "He plays Tight End for the Denver Broncos"
+      ]
+    }
+  },
+  "2026-05-22": {
+    "mlb": {
+      "answer": "Bryan Reynolds",
+      "accolades": [
+        "2021 NL All-Star",
+        "2022 NL Silver Slugger"
+      ],
+      "clues": [
+        "In the 2025 season he hit .245 with 16 home runs and 73 RBI for his small-market club.",
+        "Nationality: American; In 2023 he signed an eight-year, $106.75 million contract extension, the largest deal in his franchise's history.",
+        "On May 22, 2022, he hit for the cycle against the Chicago Cubs, becoming the first switch-hitter in his franchise's history to do so.",
+        "He came up through the same outfield as Starling Marte, who has since played for several teams including the Mets.",
+        "He plays Outfielder for the Pittsburgh Pirates"
+      ]
+    },
+    "nba": {
+      "answer": "Miles Bridges",
+      "accolades": [
+        "2018 1st Round Pick"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 17.1 points, 5.8 rebounds, and 3.2 assists while serving as a primary scoring forward for his rebuilding team.",
+        "He won the 2018 NCAA Tournament's Big Ten Player of the Year award before being selected 12th overall via a draft-night trade.",
+        "College: Michigan State; Draft Year: 2018",
+        "He came up alongside point guard Kemba Walker, who has since retired after a long NBA career.",
+        "He plays Forward for the Charlotte Hornets"
+      ]
+    },
+    "nfl": {
+      "answer": "Brock Bowers",
+      "accolades": [
+        "2x Pro Bowl",
+        "2024 NFL Rookie Receptions Record (TE)"
+      ],
+      "clues": [
+        "In 2025 he caught 64 passes for 680 yards and 7 touchdowns across 12 games while battling a knee injury that landed him on injured reserve.",
+        "As a rookie in 2024 he set NFL single-season records for a tight end with 112 receptions and posted a then-rookie record 1,194 receiving yards at the position.",
+        "College: Georgia; Draft Year: 2024",
+        "He plays in a tight end room that previously featured Michael Mayer, with whom he formed one of the youngest 1-2 TE punches in the league.",
+        "He plays Tight End for the Las Vegas Raiders"
+      ]
+    }
+  },
+  "2026-05-23": {
+    "mlb": {
+      "answer": "Randy Arozarena",
+      "accolades": [
+        "2x All-Star",
+        "2020 ALCS MVP",
+        "2021 AL Rookie of the Year"
+      ],
+      "clues": [
+        "In 2025 he hit 27 home runs with 76 RBI across 160 games while stealing 31 bases for his fifth consecutive 20-20 season.",
+        "Nationality: Cuban; He set the MLB postseason record for most home runs in a single playoff run with 10 long balls during the 2020 postseason.",
+        "He was the first rookie in MLB history to win a League Championship Series MVP, taking the 2020 ALCS award with the Tampa Bay Rays.",
+        "He spent multiple postseason runs in Tampa Bay alongside outfielder Kevin Kiermaier, who has since departed the Rays organization.",
+        "He plays Outfielder for the Seattle Mariners"
+      ]
+    },
+    "nba": {
+      "answer": "Myles Turner",
+      "accolades": [
+        "2x NBA Blocks Leader"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 15.6 points, 6.5 rebounds, and 1.5 blocks while helping his team reach the NBA Finals before signing a major free-agent contract.",
+        "He is the only player in NBA history to lead the league in blocks per game in two separate seasons before turning 28.",
+        "College: Texas; Draft Year: 2015",
+        "He spent his first decade in Indiana alongside guard Tyrese Haliburton, who remains the Pacers' franchise cornerstone.",
+        "He plays Center for the Milwaukee Bucks"
+      ]
+    },
+    "nfl": {
+      "answer": "Sam LaPorta",
+      "accolades": [
+        "2023 Pro Bowl"
+      ],
+      "clues": [
+        "In an injury-shortened 2025 season he caught 40 passes for 489 yards and 3 touchdowns across 9 games before a herniated disk ended his year in November.",
+        "As a rookie in 2023 he set the NFL single-season record for receptions by a rookie tight end with 86, breaking Keith Jackson's mark from 1988.",
+        "College: Iowa; Draft Year: 2023",
+        "He catches passes from quarterback Jared Goff and shares the offense with running back David Montgomery, who came over from the Bears.",
+        "He plays Tight End for the Detroit Lions"
+      ]
+    }
+  },
+  "2026-05-24": {
+    "mlb": {
+      "answer": "Sandy Alcántara",
+      "accolades": [
+        "2022 NL Cy Young Award",
+        "2x All-Star"
+      ],
+      "clues": [
+        "Returning from Tommy John surgery, he posted a 2.67 ERA with 22 strikeouts in his first handful of starts in 2025 while making his fourth career 30-plus-start season.",
+        "Nationality: Dominican; In 2022 he led all of Major League Baseball with six complete games on his way to the National League Cy Young Award.",
+        "His 2022 Cy Young campaign featured the most complete games by any pitcher in a single season since Roy Halladay's 2011 effort.",
+        "He came over in the December 2017 trade that sent Marcell Ozuna to St. Louis, with Ozuna later signing with Atlanta.",
+        "He plays Starting Pitcher for the Miami Marlins"
+      ]
+    },
+    "nba": {
+      "answer": "Nikola Vučević",
+      "accolades": [
+        "2x NBA All-Star"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 21.3 points and 9.8 rebounds while playing for the Bulls before a midseason trade in February 2026.",
+        "Nationality: Montenegrin; He won the 2019 NBA Skills Challenge during All-Star Weekend, becoming the second-tallest player ever to win the event at the time.",
+        "College: USC; Draft Year: 2011",
+        "He played five-plus seasons in Orlando alongside Aaron Gordon, who has since won an NBA championship in Denver.",
+        "He plays Center for the Boston Celtics"
+      ]
+    },
+    "nfl": {
+      "answer": "Jordan Addison",
+      "accolades": [
+        "2023 Biletnikoff Award (College)"
+      ],
+      "clues": [
+        "In the 2025 NFL season he played 17 games as one of his team's primary slot and outside receivers, recording double-digit receiving touchdowns over a two-season stretch.",
+        "As a rookie in 2023 he tied his franchise's rookie record for receiving touchdowns with 10, becoming the first first-round receiver from the team to reach double-digit scores.",
+        "College: USC; Draft Year: 2023",
+        "He shares an offense with All-Pro receiver Justin Jefferson, who remains the franchise's top target.",
+        "He plays Wide Receiver for the Minnesota Vikings"
+      ]
+    }
+  },
+  "2026-05-25": {
+    "mlb": {
+      "answer": "Seiya Suzuki",
+      "accolades": [
+        "2025 NL Player of the Week"
+      ],
+      "clues": [
+        "In 2025 he hit .245 with 32 home runs and 103 RBI across 151 games, including a sizzling May where he hit nearly .500.",
+        "Nationality: Japanese; Before coming to MLB he was a five-time Nippon Professional Baseball Best Nine outfielder and a two-time Pacific League home run champion.",
+        "He signed a five-year, $85 million contract in March 2022 to begin his MLB career, the largest international free-agent deal at the time for an outfielder.",
+        "He came over to his MLB team at the same time as catcher Yan Gomes, who has since departed.",
+        "He plays Outfielder for the Chicago Cubs"
+      ]
+    },
+    "nba": {
+      "answer": "Norman Powell",
+      "accolades": [
+        "2024 Sixth Man of the Year Finalist"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged a career-high 21.8 points across 60 games while shooting 48% from the field and 42% from three.",
+        "He is one of only six players in NBA history to start his career as a second-round pick and later average 20-plus points per game in three separate seasons.",
+        "College: UCLA; Draft Year: 2015",
+        "He won the 2019 NBA championship in Toronto alongside Pascal Siakam, who has since moved on to play for the Indiana Pacers.",
+        "He plays Guard for the LA Clippers"
+      ]
+    },
+    "nfl": {
+      "answer": "Drake London",
+      "accolades": [
+        "2024 Pro Bowl Alternate"
+      ],
+      "clues": [
+        "In 2025 he caught 68 passes for 919 yards and 7 touchdowns across 12 games despite battling a knee injury.",
+        "He is the highest-drafted wide receiver in his franchise's history, going eighth overall in the 2022 NFL Draft.",
+        "College: USC; Draft Year: 2022",
+        "He was Marcus Mariota's primary target as a rookie before Mariota left for Philadelphia after the 2022 season.",
+        "He plays Wide Receiver for the Atlanta Falcons"
+      ]
+    }
+  },
+  "2026-05-26": {
+    "mlb": {
+      "answer": "Shane Bieber",
+      "accolades": [
+        "2020 AL Cy Young Award",
+        "2x All-Star",
+        "2020 AL Strikeout Leader"
+      ],
+      "clues": [
+        "After being traded at the 2025 deadline, he posted a 3.57 ERA across his time with both his old club and his new one.",
+        "Nationality: American; In the shortened 2020 season he became the first pitcher in MLB history to win the pitching Triple Crown in his Cy Young Award season since 2011.",
+        "His 2020 campaign saw him strike out 14 batters in his first start of the year, the most by any pitcher in an Opening Day start in MLB history.",
+        "He spent multiple seasons in Cleveland's rotation alongside ace Corey Kluber, who has since retired from baseball.",
+        "He plays Starting Pitcher for the Toronto Blue Jays"
+      ]
+    },
+    "nba": {
+      "answer": "OG Anunoby",
+      "accolades": [
+        "2019 NBA Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 16.7 points, 5.2 rebounds, and 1.5 steals while serving as one of the league's top two-way wings.",
+        "He hit a corner three-pointer with 4.2 seconds left in Game 3 of the 2019 NBA Finals to give his team a one-point lead in the eventual championship-clinching round.",
+        "College: Indiana; Draft Year: 2017",
+        "He won that 2019 title in Toronto alongside Pascal Siakam, who has since been traded to the Indiana Pacers.",
+        "He plays Forward for the New York Knicks"
+      ]
+    },
+    "nfl": {
+      "answer": "Jaxon Smith-Njigba",
+      "accolades": [
+        "2025 First-Team All-Pro",
+        "2025 AP Offensive Player of the Year",
+        "Super Bowl LX Champion"
+      ],
+      "clues": [
+        "In 2025 he caught 119 passes for 1,793 yards and 10 touchdowns across 17 games while leading his team to a Super Bowl victory in February 2026.",
+        "His 1,793 receiving yards in 2025 ranked first in the NFL and broke his franchise's single-season record at the position.",
+        "College: Ohio State; Draft Year: 2023",
+        "He shared an Ohio State receiver room with future NFL stars Garrett Wilson and Chris Olave, both of whom departed for the NFL before him.",
+        "He plays Wide Receiver for the Seattle Seahawks"
+      ]
+    }
+  },
+  "2026-05-27": {
+    "mlb": {
+      "answer": "Steven Kwan",
+      "accolades": [
+        "4x Gold Glove",
+        "2023 All-Star",
+        "2022 Silver Slugger"
+      ],
+      "clues": [
+        "In the 2025 season he hit .272 with 11 home runs, 56 RBI, and 21 stolen bases while winning his fourth straight Gold Glove award.",
+        "Nationality: American; As a rookie in 2022 he set an MLB record by reaching base in each of his first eight career plate appearances without recording an out.",
+        "He won the AL Gold Glove in left field in each of his first four MLB seasons, becoming the first player ever to do so at any outfield position.",
+        "He came up through the lineup alongside outfielder Myles Straw, who has since departed the organization.",
+        "He plays Outfielder for the Cleveland Guardians"
+      ]
+    },
+    "nba": {
+      "answer": "Russell Westbrook",
+      "accolades": [
+        "2017 NBA MVP",
+        "9x All-Star",
+        "All-Time Triple-Double Leader"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 13.3 points, 4.9 rebounds, and 6.1 assists while recording his 200th career triple-double on November 19, 2024.",
+        "He is the all-time NBA leader in triple-doubles, having surpassed Oscar Robertson's previous record in May 2021.",
+        "College: UCLA; Draft Year: 2008",
+        "He spent more than a decade in Oklahoma City alongside Kevin Durant, who has since played for Brooklyn, Phoenix, and Houston.",
+        "He plays Guard for the Denver Nuggets"
+      ]
+    },
+    "nfl": {
+      "answer": "Jonathan Taylor",
+      "accolades": [
+        "3x Pro Bowl",
+        "2021 First-Team All-Pro",
+        "2021 NFL Rushing Leader"
+      ],
+      "clues": [
+        "In 2025 he led the NFL in both rushing attempts (323) and rushing touchdowns (18) while gaining 1,585 yards on the ground.",
+        "In 2021 he became the youngest player in NFL history to lead the league in rushing yards, rushing touchdowns, and yards from scrimmage in the same season.",
+        "College: Wisconsin; Draft Year: 2020",
+        "His early years featured handoffs from quarterback Carson Wentz, who has since bounced through several teams as a backup.",
+        "He plays Running Back for the Indianapolis Colts"
+      ]
+    }
+  },
+  "2026-05-28": {
+    "mlb": {
+      "answer": "Teoscar Hernández",
+      "accolades": [
+        "2x Silver Slugger",
+        "2024 Home Run Derby Champion"
+      ],
+      "clues": [
+        "In 2025 he hit .247 with 25 home runs and 89 RBI across 134 games for the reigning World Series champions.",
+        "Nationality: Dominican; He won the 2024 Home Run Derby, becoming the first Dodger to ever capture the event during All-Star Week.",
+        "He was a key bat in the 2024 championship run, helping his club win their first full-season title since 1988.",
+        "He spent multiple seasons in Toronto alongside outfielder George Springer, who remains with the Blue Jays.",
+        "He plays Outfielder for the Los Angeles Dodgers"
+      ]
+    },
+    "nba": {
+      "answer": "Scottie Barnes",
+      "accolades": [
+        "2024 All-Star",
+        "2022 Rookie of the Year"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 19.3 points, 7.7 rebounds, and 5.8 assists while serving as the franchise centerpiece.",
+        "He won Rookie of the Year over future MVP candidate Evan Mobley in 2022, being chosen unanimously by panel members for the All-Rookie First Team that year.",
+        "College: Florida State; Draft Year: 2021",
+        "He spent multiple seasons alongside Pascal Siakam, who has since been traded to the Indiana Pacers.",
+        "He plays Forward for the Toronto Raptors"
+      ]
+    },
+    "nfl": {
+      "answer": "Breece Hall",
+      "accolades": [
+        "2022 NFL All-Rookie Team"
+      ],
+      "clues": [
+        "In 2025 he posted his first career 1,000-yard rushing season with 1,065 yards and 4 touchdowns while adding 36 receptions for 350 yards.",
+        "He set a Big Ten Conference record by scoring a rushing touchdown in 24 consecutive college games during his time at Iowa State.",
+        "College: Iowa State; Draft Year: 2022",
+        "He shares a backfield with quarterback Aaron Rodgers' replacement Justin Fields, before Fields eventually moved on to Kansas City.",
+        "He plays Running Back for the New York Jets"
+      ]
+    }
+  },
+  "2026-05-29": {
+    "mlb": {
+      "answer": "Tyler Glasnow",
+      "accolades": [
+        "2024 NL All-Star"
+      ],
+      "clues": [
+        "In 2025 he went 4-3 with a 3.19 ERA and 106 strikeouts across 90-plus innings while battling shoulder inflammation that limited him to 18 starts.",
+        "Nationality: American; In April 2024 he became the first pitcher from his franchise to record at least 11 strikeouts in three of his first four starts of a season.",
+        "He was the centerpiece of a December 2023 trade with Tampa Bay that included a five-year, $136.5 million contract extension on the day he joined his new team.",
+        "He spent multiple seasons in Tampa Bay's rotation with Blake Snell, who is now his teammate after originally signing in San Francisco.",
+        "He plays Starting Pitcher for the Los Angeles Dodgers"
+      ]
+    },
+    "nba": {
+      "answer": "Walker Kessler",
+      "accolades": [
+        "2023 NBA All-Rookie First Team"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 11.1 points, 12.2 rebounds, and 2.4 blocks while serving as one of the league's premier rim protectors.",
+        "As a rookie in 2022-23 he led all NBA rookies with 134 blocks and posted the highest block percentage by a first-year player since Manute Bol in 1985-86.",
+        "College: Auburn; Draft Year: 2022",
+        "He came over in the trade that sent Rudy Gobert to Minnesota, where Gobert remains the Timberwolves' starting center.",
+        "He plays Center for the Utah Jazz"
+      ]
+    },
+    "nfl": {
+      "answer": "Chris Olave",
+      "accolades": [
+        "2x Pro Bowl Alternate"
+      ],
+      "clues": [
+        "In the 2025 season he set career highs with 100 receptions, 1,163 receiving yards, and 9 touchdowns across all 17 games.",
+        "He set Ohio State's all-time program record for receiving touchdowns with 35 during his college career, surpassing the previous mark held by David Boston.",
+        "College: Ohio State; Draft Year: 2022",
+        "He came up alongside quarterback Jameis Winston during a memorable two-year stretch before Winston departed for Cleveland.",
+        "He plays Wide Receiver for the New Orleans Saints"
+      ]
+    }
+  },
+  "2026-05-30": {
+    "mlb": {
+      "answer": "Yandy Díaz",
+      "accolades": [
+        "2023 AL Batting Title",
+        "2023 All-Star",
+        "2023 Silver Slugger"
+      ],
+      "clues": [
+        "In 2025 he hit .304 with 25 home runs and 83 RBI across 150 games, posting a 135 wRC+ that ranked among the top 20 in MLB.",
+        "Nationality: Cuban; In 2023 he won the American League batting title with a .330 average, becoming the first player in his franchise's history to win one.",
+        "He has led all qualified hitters in line-drive percentage in three separate seasons since 2021, ranking near the top of MLB in hard-hit rate.",
+        "He spent his first three big-league seasons in Cleveland alongside Francisco Lindor, who has since signed a long-term deal with the New York Mets.",
+        "He plays First Baseman for the Tampa Bay Rays"
+      ]
+    },
+    "nba": {
+      "answer": "Saddiq Bey",
+      "accolades": [
+        "2021 NBA All-Rookie First Team"
+      ],
+      "clues": [
+        "He missed the entire 2024-25 NBA season after suffering a torn ACL in March 2024 while playing for his previous team.",
+        "As a rookie in 2020-21 he set the NBA single-season rookie record for three-pointers made by a non-lottery pick with 175.",
+        "College: Villanova; Draft Year: 2020",
+        "He came up in Detroit alongside guard Cade Cunningham, who remains the Pistons' franchise cornerstone.",
+        "He plays Forward for the Atlanta Hawks"
+      ]
+    },
+    "nfl": {
+      "answer": "D'Andre Swift",
+      "accolades": [
+        "2022 Pro Bowl"
+      ],
+      "clues": [
+        "In 2025 he served as one of his team's lead backs in an offense that featured a young quarterback in his second professional season.",
+        "In 2023 he set a Philadelphia Eagles franchise record by recording a 175-yard rushing performance against Minnesota in his first season with the team.",
+        "College: Georgia; Draft Year: 2020",
+        "He spent his first three NFL seasons in Detroit alongside running back Jamaal Williams, who has since departed the Lions organization.",
+        "He plays Running Back for the Chicago Bears"
+      ]
+    }
+  },
+  "2026-05-31": {
+    "mlb": {
+      "answer": "Brandon Nimmo",
+      "accolades": [
+        "2022 NL All-Star"
+      ],
+      "clues": [
+        "After being traded for Marcus Semien in November 2025, he prepared to debut for his new team in 2026.",
+        "Nationality: American; He grew up in Cheyenne, Wyoming, and is the only MLB player ever drafted in the first round directly out of a Wyoming high school.",
+        "In 2018 he ranked first among all qualified MLB hitters in pitches per plate appearance, becoming one of the most selective leadoff men in baseball.",
+        "He spent over a decade with the Mets alongside first baseman Pete Alonso, who remains with New York.",
+        "He plays Outfielder for the Texas Rangers"
+      ]
+    },
+    "nba": {
+      "answer": "Tobias Harris",
+      "accolades": [
+        "2021 NBA Skills Challenge Champion"
+      ],
+      "clues": [
+        "In the 2024-25 season he averaged 13.7 points and 5.6 rebounds while serving as a veteran scoring forward for his Eastern Conference club.",
+        "He is one of only nine players in NBA history to record at least 14,000 career points and 5,000 career rebounds before turning 33.",
+        "College: Tennessee; Draft Year: 2011",
+        "He spent multiple seasons in Philadelphia alongside All-Star center Joel Embiid, who remains with the 76ers.",
+        "He plays Forward for the Detroit Pistons"
+      ]
+    },
+    "nfl": {
+      "answer": "Tony Pollard",
+      "accolades": [
+        "2022 Pro Bowl"
+      ],
+      "clues": [
+        "In the 2025 season he served as a primary back for his AFC South team after spending the prior season with them as well.",
+        "In 2022 he became the first Cowboys running back since Emmitt Smith in 1995 to record at least 1,000 rushing yards and 9 rushing touchdowns in the same season.",
+        "College: Memphis; Draft Year: 2019",
+        "He shared the Dallas backfield with Ezekiel Elliott for several seasons before Elliott departed for New England in 2023.",
+        "He plays Running Back for the Tennessee Titans"
       ]
     }
   }
